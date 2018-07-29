@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Asif\OrientationLineJudge.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\Arrow.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowNotch.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowSpawner.cs" />
