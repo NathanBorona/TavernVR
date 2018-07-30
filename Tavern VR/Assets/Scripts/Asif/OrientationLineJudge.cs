@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
+
 public class OrientationLineJudge : MonoBehaviour {
+    GameObject tempRight;
+    GameObject tempLeft;
     enum LineState {Start, Draw, Clean};
     LineState myState;
 
@@ -11,18 +14,22 @@ public class OrientationLineJudge : MonoBehaviour {
     int curPosIndex;
     GameObject tempLine;
     LineRenderer lineRend;
+    bool startAllowed;
 
     Transform startTransf;
     Transform currentTransf;
     void Awake () {
         myState = LineState.Start;
         curPosIndex = 0;
+        tempRight = GameObject.FindGameObjectWithTag("RightController");
+        tempLeft = GameObject.FindGameObjectWithTag("LeftController");
 	}
-	
+
 	void Update () {
         switch (myState) {
             case LineState.Start:
-                startTransf = transform; //but actually please use the controller's transform
+                startTransf = tempLeft.transform; //but actually please use the controller's transform
+                startAllowed = true;
                 break;
             case LineState.Draw:
                 currentTransf = transform; //ditto
@@ -39,18 +46,21 @@ public class OrientationLineJudge : MonoBehaviour {
     void CleanUp() {
         Destroy(tempLine);
         curPosIndex = 0;
+        startAllowed = true;
         myState = LineState.Start;
     }
 
     public void StartLine() {
-        //when the crystal is used 
-        //get the current color (enum stored in either this or another script using the touchpad)
-        //get the facing of the crystal/controller using startTransf
-        tempLine = Instantiate(new GameObject("line"), startTransf.position, Quaternion.identity);
-        lineRend = tempLine.AddComponent<LineRenderer>();
-        lineRend.SetPosition(curPosIndex, startTransf.position);
-        curPosIndex++;
-        myState = LineState.Draw;
+        if (startAllowed) {
+            //when the crystal is used - how do I do the thing where you check if trigger is pressed/recieve events from VRTK?
+            //get the current color (enum stored in either this or another script using the touchpad)
+            tempLine = Instantiate(new GameObject("line"), startTransf.position, startTransf.rotation);
+            lineRend = tempLine.AddComponent<LineRenderer>();
+            lineRend.SetPosition(curPosIndex, startTransf.position);
+            curPosIndex++;
+            myState = LineState.Draw;
+            startAllowed = false;
+        }
     }
 
     void DrawLine() {
