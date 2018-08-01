@@ -20,6 +20,10 @@ namespace VRTK {
         Color realCol;
         public float lerpCol;
 
+        public GameObject heldCrystal; //for now it's just a giant test crystal though
+        Material crystalMaterial;
+        float ogValue;
+
         Vector3 lineStPos;
         Vector3 lineEnPos;
         public float maxDrawDist;
@@ -49,6 +53,8 @@ namespace VRTK {
             lineStPos = Vector3.zero;
             lineEnPos = Vector3.zero;
             lineRend.positionCount = 0;
+            crystalMaterial = heldCrystal.GetComponent<MeshRenderer>().material;
+            ogValue = crystalMaterial.color.a;
         }
 
         void Update() {
@@ -108,7 +114,7 @@ namespace VRTK {
                 curCol = new Color(redAm, greenAm, blueAm);
                 if (oldCol != curCol) {
                     realCol = Color.Lerp(oldCol, curCol, lerpCol);
-                    //crystalFocus.Color = realCol;
+                    crystalMaterial.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
                 }
             }
             if (myLeftController.touchpadPressed) {
