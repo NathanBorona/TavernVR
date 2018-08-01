@@ -18,7 +18,6 @@ namespace VRTK {
         Color oldCol;
         Color curCol;
         Color realCol;
-        public float lerpCol;
 
         public GameObject heldCrystal; //for now it's just a giant test crystal though
         Renderer crystalMaterial;
@@ -55,6 +54,7 @@ namespace VRTK {
             lineRend.positionCount = 0;
             crystalMaterial = heldCrystal.GetComponent<MeshRenderer>();
             ogValue = crystalMaterial.material.color.a;
+            oldCol = Color.white;
         }
 
         void Update() {
@@ -80,6 +80,14 @@ namespace VRTK {
 
         void CheckColor() {
             oldCol = curCol;
+
+            if (Input.GetKeyDown(KeyCode.M)) { // for debugging
+                redAm = 1f;
+                greenAm = 0.25f;
+                blueAm = 0.25f;
+                curCol = new Color(redAm, greenAm, blueAm);
+            }
+
             if (myLeftController.touchpadAxisChanged) {
                 if (myLeftController.GetTouchpadAxisAngle() <= 90 && myLeftController.GetTouchpadAxisAngle() > 45) {
                     //if in the center of the red and green tri
@@ -98,7 +106,6 @@ namespace VRTK {
                     redAm = 0.25f;
                     greenAm = 0.5f;
                 }
-
                 if (myLeftController.GetTouchpadAxisAngle() >= 120 && myLeftController.GetTouchpadAxisAngle() < 150) {
                     blueAm = 0.5f;
                     //if in the first half of the blue tri
@@ -112,11 +119,12 @@ namespace VRTK {
                     //else if outside of blue
                 }
                 curCol = new Color(redAm, greenAm, blueAm);
-                if (oldCol != curCol) {
-                    realCol = Color.Lerp(oldCol, curCol, lerpCol);
-                    crystalMaterial.material.SetColor("CrystalMaterial", new Color(realCol.r, realCol.g, realCol.b, ogValue));
-                }
             }
+            if (oldCol != curCol) {
+                realCol = Color.Lerp(oldCol, curCol, 1);// this doesn't work because it's setting it to a value between 0 and 1.
+                crystalMaterial.material.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
+            }
+
             if (myLeftController.touchpadPressed) {
                 if (myLeftController.GetTouchpadAxisAngle() <= 120) {
                     if (myLeftController.GetTouchpadAxis().x > 0) {

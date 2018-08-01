@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17807716ec1cbf243b60da8730955520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpCol: 0
+  lerpCol: 1
   heldCrystal: {fileID: 1950942592}
   maxDrawDist: 0.25
   lineRend: {fileID: 764258571}
