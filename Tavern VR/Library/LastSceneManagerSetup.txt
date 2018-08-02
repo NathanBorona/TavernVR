@@ -1,4 +1,1 @@
-sceneSetups:
-- path: Assets/Nathan/Assets/Example Scene.unity
-  isLoaded: 0
-  isActive: 0
+sceneSetups: []
