@@ -20,8 +20,7 @@ namespace VRTK {
         Color realCol;
         float colorLerpTime;
 
-        public GameObject heldCrystal; //for now it's just a giant test crystal though
-        Renderer crystalMaterial;
+        public Renderer crystalMaterial;
         float ogValue;
 
         Vector3 lineStPos;
@@ -34,8 +33,7 @@ namespace VRTK {
         bool startAllowed;
         float dotLineAngle;
 
-        public VRTK_ControllerEvents myRightController;
-        public VRTK_ControllerEvents myLeftController;
+        public VRTK_ControllerEvents myController;
 
         void Awake() {
             AssignVariablesMisc();
@@ -48,35 +46,37 @@ namespace VRTK {
             lineStPos = Vector3.zero;
             lineEnPos = Vector3.zero;
             curPosIndex = 0; //makes sure the current index position for drawing lines is set to 0 at the start.
-            myRightController = GameObject.FindGameObjectWithTag("RightController").GetComponent<VRTK_ControllerEvents>();
-            myLeftController = GameObject.FindGameObjectWithTag("LeftController").GetComponent<VRTK_ControllerEvents>();
             lineStPos = Vector3.zero;
             lineEnPos = Vector3.zero;
             lineRend.positionCount = 0;
-            crystalMaterial = heldCrystal.GetComponent<MeshRenderer>();
             ogValue = crystalMaterial.material.color.a;
             oldCol = Color.white;
             tarCol = Color.white;
         }
 
         void Update() {
-            switch (myState) {
-                case LineState.Start:
-                    StartLine();
-                    CheckColor();
-                    break;
-                case LineState.Draw:
-                    currentTransf = myLeftController.transform;
-                    DrawLine();
-                    break;
-                case LineState.Stop:
-                    StopDraw();
-                    break;
-                case LineState.Clean:
-                    CleanUp();
-                    startTransf = transform;
-                    currentTransf = transform;
-                    break;
+            if (myController != null) {
+                if (myController.gripPressed) {
+                    GetComponent<NoDropInteractable>().ForceStopRound();
+                }
+                switch (myState) {
+                    case LineState.Start:
+                        StartLine();
+                        CheckColor();
+                        break;
+                    case LineState.Draw:
+                        currentTransf = myController.transform;
+                        DrawLine();
+                        break;
+                    case LineState.Stop:
+                        StopDraw();
+                        break;
+                    case LineState.Clean:
+                        CleanUp();
+                        startTransf = transform;
+                        currentTransf = transform;
+                        break;
+                }
             }
         }
         void ColorLerpDEBUG() {
@@ -113,29 +113,29 @@ namespace VRTK {
 
             ColorLerpDEBUG(); //ONLY RUN THIS IF USING VRTK SIMULATOR. Num1, 2, 3 change colors;
 
-            if (myLeftController.touchpadAxisChanged) {
-                if (myLeftController.GetTouchpadAxisAngle() <= 90 && myLeftController.GetTouchpadAxisAngle() > 45) {
+            if (myController.touchpadAxisChanged) {
+                if (myController.GetTouchpadAxisAngle() <= 90 && myController.GetTouchpadAxisAngle() > 45) {
                     //if in the center of the red and green tri
-                    if (myLeftController.GetTouchpadAxis().x > 0) {
+                    if (myController.GetTouchpadAxis().x > 0) {
                         redAm = 1f;
                     }
                     else {
                         greenAm = 1f;
                     }
                 }
-                else if (myLeftController.GetTouchpadAxisAngle() > 90 && myLeftController.GetTouchpadAxisAngle() < 120) {
-                    if (myLeftController.GetTouchpadAxis().x > 0) {
+                else if (myController.GetTouchpadAxisAngle() > 90 && myController.GetTouchpadAxisAngle() < 120) {
+                    if (myController.GetTouchpadAxis().x > 0) {
                         redAm = 0.5f;
                         greenAm = 0.25f;
                     }
                     redAm = 0.25f;
                     greenAm = 0.5f;
                 }
-                if (myLeftController.GetTouchpadAxisAngle() >= 120 && myLeftController.GetTouchpadAxisAngle() < 150) {
+                if (myController.GetTouchpadAxisAngle() >= 120 && myController.GetTouchpadAxisAngle() < 150) {
                     blueAm = 0.5f;
                     //if in the first half of the blue tri
                 }
-                else if (myLeftController.GetTouchpadAxisAngle() >= 150) {
+                else if (myController.GetTouchpadAxisAngle() >= 150) {
                     blueAm = 1f;
                     //else if in the center of the blue tri
                 }
@@ -152,9 +152,9 @@ namespace VRTK {
                 crystalMaterial.material.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
             } // I want to put this in update, and not use oldCol as a method of judgement.
 
-            if (myLeftController.touchpadPressed) {
-                if (myLeftController.GetTouchpadAxisAngle() <= 120) {
-                    if (myLeftController.GetTouchpadAxis().x > 0) {
+            if (myController.touchpadPressed) {
+                if (myController.GetTouchpadAxisAngle() <= 120) {
+                    if (myController.GetTouchpadAxis().x > 0) {
                         //red
                     }
                     else {
@@ -177,8 +177,8 @@ namespace VRTK {
         }
 
         void StartLine() { //TO BE USED on trigger press stay event
-            if (myLeftController.triggerPressed) {
-                startTransf = myLeftController.transform;
+            if (myController.triggerPressed) {
+                startTransf = myController.transform;
                 //when the crystal is used - how do I do the thing where you check if trigger is pressed/recieve events from VRTK?
                 //get the current color (enum stored in either this or another script using the touchpad)
                 lineRend.positionCount = lineRend.positionCount + 1;
@@ -190,7 +190,7 @@ namespace VRTK {
         }
 
         void DrawLine() {
-            if (myLeftController.triggerPressed) {
+            if (myController.triggerPressed) {
                 if (Vector3.Distance(currentTransf.position, lineRend.GetPosition(lineRend.positionCount-1)) > maxDrawDist) {
                     lineRend.positionCount = lineRend.positionCount + 1;
                     lineRend.SetPosition(lineRend.positionCount-1, currentTransf.position);
