@@ -55,14 +55,14 @@ namespace VRTK {
         }
 
         void Update() {
+            if (myController != null && myController.gripPressed) {
+                GetComponent<NoDropInteractable>().ForceStopRound();
+            }
             if (myController != null) {
-                if (myController.gripPressed) {
-                    GetComponent<NoDropInteractable>().ForceStopRound();
-                }
                 switch (myState) {
                     case LineState.Start:
-                        StartLine();
-                        CheckColor();
+                            StartLine();
+                            CheckColor();
                         break;
                     case LineState.Draw:
                         currentTransf = myController.transform;
@@ -112,7 +112,6 @@ namespace VRTK {
             }
 
             ColorLerpDEBUG(); //ONLY RUN THIS IF USING VRTK SIMULATOR. Num1, 2, 3 change colors;
-
             if (myController.touchpadAxisChanged) {
                 if (myController.GetTouchpadAxisAngle() <= 90 && myController.GetTouchpadAxisAngle() > 45) {
                     //if in the center of the red and green tri
@@ -146,6 +145,7 @@ namespace VRTK {
                 tarCol = new Color(redAm, greenAm, blueAm);
                 oldCol = crystalMaterial.material.color;
             }
+
             if (oldCol != tarCol) {
                 realCol = Color.Lerp(oldCol, tarCol, colorLerpTime);// this doesn't work because it's setting it to a value between 0 and 1.
                 colorLerpTime += 0.02f;
@@ -177,15 +177,15 @@ namespace VRTK {
         }
 
         void StartLine() { //TO BE USED on trigger press stay event
-            if (myController.triggerPressed) {
-                startTransf = myController.transform;
-                //when the crystal is used - how do I do the thing where you check if trigger is pressed/recieve events from VRTK?
-                //get the current color (enum stored in either this or another script using the touchpad)
-                lineRend.positionCount = lineRend.positionCount + 1;
-                lineRend.SetPosition(0, startTransf.position);
-                //sets the first point of the line to the same position as the controller
-                curPosIndex++;
-                myState = LineState.Draw;
+                if (myController.triggerPressed) {
+                    startTransf = myController.transform;
+                    //when the crystal is used - how do I do the thing where you check if trigger is pressed/recieve events from VRTK?
+                    //get the current color (enum stored in either this or another script using the touchpad)
+                    lineRend.positionCount = lineRend.positionCount + 1;
+                    lineRend.SetPosition(0, startTransf.position);
+                    //sets the first point of the line to the same position as the controller
+                    curPosIndex++;
+                    myState = LineState.Draw;
             }
         }
 

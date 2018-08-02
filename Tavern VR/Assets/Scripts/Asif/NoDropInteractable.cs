@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace VRTK {
     public class NoDropInteractable : VRTK_InteractableObject {
-        public bool droppable;
         //VRTK_InteractGrab controllerGrabbing;
         GameObject grabbingObj;
         OrientationLineJudge myLineJudge;
@@ -22,15 +21,32 @@ namespace VRTK {
             myLineJudge.myController = grabbingObj.GetComponent<VRTK_ControllerEvents>();
         }
 
-        public void ForceStopRound() {
-            this.ForceReleaseGrab();
-            myLineJudge.myController = null;
 
+        //THIS DOWNWARD IS REQUIRED FOR NON DROPPABLE:
+        //(with a few exceptions)
+
+        private void Start() {
+            originalDroppable = droppable;
         }
+
+        public bool droppable;
+        bool originalDroppable;
+
+        public void ForceStopRound() {
+            droppable = true;
+            Ungrabbed();
+            //not needed
+            myLineJudge.myController = null;
+            //not needed
+        }
+
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null) {
             if (droppable) {
-                base.Ungrabbed(previousGrabbingObject);
+                //not needed
                 myLineJudge.myController = null;
+                //not needed
+                droppable = originalDroppable;
+                base.Ungrabbed(previousGrabbingObject);
             }
         }
     }

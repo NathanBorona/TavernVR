@@ -906,7 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystalMaterial: {fileID: 1950942593}
-  maxDrawDist: 0.25
+  maxDrawDist: 0.1
   lineRend: {fileID: 1542848481}
   myController: {fileID: 0}
 --- !u!54 &972616868
