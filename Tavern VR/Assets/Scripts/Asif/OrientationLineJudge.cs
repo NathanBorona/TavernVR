@@ -16,8 +16,9 @@ namespace VRTK {
         float blueAm;
         float greenAm;
         Color oldCol;
-        Color curCol;
+        Color tarCol;
         Color realCol;
+        float colorLerpTime;
 
         public GameObject heldCrystal; //for now it's just a giant test crystal though
         Renderer crystalMaterial;
@@ -55,6 +56,7 @@ namespace VRTK {
             crystalMaterial = heldCrystal.GetComponent<MeshRenderer>();
             ogValue = crystalMaterial.material.color.a;
             oldCol = Color.white;
+            tarCol = Color.white;
         }
 
         void Update() {
@@ -77,16 +79,39 @@ namespace VRTK {
                     break;
             }
         }
-
-        void CheckColor() {
-            oldCol = curCol;
-
-            if (Input.GetKeyDown(KeyCode.M)) { // for debugging
+        void ColorLerpDEBUG() {
+            if (Input.GetKeyDown(KeyCode.Keypad1)) { // for debugging RED
                 redAm = 1f;
                 greenAm = 0.25f;
                 blueAm = 0.25f;
-                curCol = new Color(redAm, greenAm, blueAm);
+                tarCol = new Color(redAm, greenAm, blueAm);
+                oldCol = crystalMaterial.material.color;
+                colorLerpTime = 0f;
             }
+            if (Input.GetKeyDown(KeyCode.Keypad2)) { // for debugging GREEN
+                redAm = 0.25f;
+                greenAm = 1f;
+                blueAm = 0.25f;
+                tarCol = new Color(redAm, greenAm, blueAm);
+                oldCol = crystalMaterial.material.color;
+                colorLerpTime = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad3)) { // for debugging BLUE
+                redAm = 0.25f;
+                greenAm = 0.25f;
+                blueAm = 1f;
+                tarCol = new Color(redAm, greenAm, blueAm);
+                oldCol = crystalMaterial.material.color;
+                colorLerpTime = 0f;
+            }
+        }
+        void CheckColor() {
+            if (colorLerpTime >= 1f) {
+                oldCol = crystalMaterial.material.color;
+                colorLerpTime = 0f;
+            }
+
+            ColorLerpDEBUG(); //ONLY RUN THIS IF USING VRTK SIMULATOR. Num1, 2, 3 change colors;
 
             if (myLeftController.touchpadAxisChanged) {
                 if (myLeftController.GetTouchpadAxisAngle() <= 90 && myLeftController.GetTouchpadAxisAngle() > 45) {
@@ -118,12 +143,14 @@ namespace VRTK {
                     blueAm = 0.25f;
                     //else if outside of blue
                 }
-                curCol = new Color(redAm, greenAm, blueAm);
+                tarCol = new Color(redAm, greenAm, blueAm);
+                oldCol = crystalMaterial.material.color;
             }
-            if (oldCol != curCol) {
-                realCol = Color.Lerp(oldCol, curCol, 1);// this doesn't work because it's setting it to a value between 0 and 1.
+            if (oldCol != tarCol) {
+                realCol = Color.Lerp(oldCol, tarCol, colorLerpTime);// this doesn't work because it's setting it to a value between 0 and 1.
+                colorLerpTime += 0.02f;
                 crystalMaterial.material.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
-            }
+            } // I want to put this in update, and not use oldCol as a method of judgement.
 
             if (myLeftController.touchpadPressed) {
                 if (myLeftController.GetTouchpadAxisAngle() <= 120) {
