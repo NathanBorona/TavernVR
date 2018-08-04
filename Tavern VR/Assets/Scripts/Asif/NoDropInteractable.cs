@@ -27,19 +27,45 @@ namespace VRTK {
 
         private void Start() {
             originalDroppable = droppable;
+            droppableAlt = droppable;
         }
 
         public bool droppable;
+        bool droppableAlt;
         bool originalDroppable;
 
         public void ForceStopRound() {
             droppable = true;
+            droppableAlt = droppable;
             Ungrabbed();
             //not needed
             myLineJudge.myController = null;
             //not needed
         }
 
+        protected override void PrimaryControllerUngrab(GameObject previousGrabbingObject, GameObject previousSecondaryGrabbingObject) {
+            UnpauseCollisions();
+            RemoveTrackPoint();
+            ResetUseState(previousGrabbingObject);
+            grabbingObjects.Clear();
+            if (secondaryGrabActionScript != null && previousSecondaryGrabbingObject != null) {
+                secondaryGrabActionScript.OnDropAction();
+                previousSecondaryGrabbingObject.GetComponent<VRTK_InteractGrab>().ForceRelease();
+            }
+            LoadPreviousState();
+        }
+        protected override void SecondaryControllerUngrab(GameObject previousGrabbingObject) {
+            if (grabbingObjects.Contains(previousGrabbingObject)) {
+                grabbingObjects.Remove(previousGrabbingObject);
+                if (droppable) {
+                    Destroy(secondaryControllerAttachPoint.gameObject);
+                }
+                secondaryControllerAttachPoint = null;
+                if (secondaryGrabActionScript != null) {
+                    secondaryGrabActionScript.ResetAction();
+                }
+            }
+        }
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null) {
             if (droppable) {
                 //not needed
