@@ -12,6 +12,7 @@ namespace VRTK {
             mySpellScript = GetComponent<SpellScript>();
             mySpellScript.myController = grabbingObj.GetComponent<VRTK_ControllerEvents>();
             mySpellScript.caster = Camera.main.gameObject;
+            mySpellScript.OnSpellGrab();
         }
         public override void OnInteractableObjectUngrabbed(InteractableObjectEventArgs e) {
             base.OnInteractableObjectUngrabbed(e);

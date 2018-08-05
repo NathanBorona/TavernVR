@@ -8,7 +8,7 @@ namespace VRTK {
     public class OrientationLineJudge : MonoBehaviour {
         //Script for drawing and judging magic lines WIP.
         //I may reconsider this script and put it on the lines instead. still trying to think of way to make this work.
-
+        int spellType;
         enum LineState { Start, Draw, Stop, Clean };
         LineState myState;
         //Enum for switch statement. states of drawing - start, draw, and clean. judge state is defined by trigger end event.
@@ -19,6 +19,9 @@ namespace VRTK {
         Color tarCol;
         Color realCol;
         float colorLerpTime;
+
+        public GameObject[] shieldSpell;
+        public GameObject[] boltSpell;
 
         public Renderer crystalMaterial;
         float ogValue;
@@ -79,6 +82,7 @@ namespace VRTK {
                 }
             }
         }
+
         void ColorLerpDEBUG() {
             if (Input.GetKeyDown(KeyCode.Keypad1)) { // for debugging RED
                 redAm = 1f;
@@ -87,6 +91,7 @@ namespace VRTK {
                 tarCol = new Color(redAm, greenAm, blueAm);
                 oldCol = crystalMaterial.material.color;
                 colorLerpTime = 0f;
+                spellType = 0;
             }
             if (Input.GetKeyDown(KeyCode.Keypad2)) { // for debugging GREEN
                 redAm = 0.25f;
@@ -95,6 +100,7 @@ namespace VRTK {
                 tarCol = new Color(redAm, greenAm, blueAm);
                 oldCol = crystalMaterial.material.color;
                 colorLerpTime = 0f;
+                spellType = 1;
             }
             if (Input.GetKeyDown(KeyCode.Keypad3)) { // for debugging BLUE
                 redAm = 0.25f;
@@ -103,8 +109,10 @@ namespace VRTK {
                 tarCol = new Color(redAm, greenAm, blueAm);
                 oldCol = crystalMaterial.material.color;
                 colorLerpTime = 0f;
+                spellType = 2;
             }
         }
+
         void CheckColor() {
             if (colorLerpTime >= 1f) {
                 oldCol = crystalMaterial.material.color;
@@ -203,8 +211,6 @@ namespace VRTK {
             }
         }
 
-
-
         void StopDraw() {
             //on stop pressing trigger
             //judge line and instantiate effect
@@ -216,12 +222,16 @@ namespace VRTK {
             if (dotLineAngle >= 90f-22.5f && dotLineAngle <= 90f+22.5f) {
                 //is horizontal spell
                 Debug.Log("cast horizontal spell");
+
+                //Instantiate(shieldSpell[spellType], lineStPos, Quaternion.identity);
             } else if (dotLineAngle > 135f-22.5f && dotLineAngle < 135f + 22.5f) {
                 //is diagonal spell
                 Debug.Log("cast diagonal spell");
             } else {
                 //is vertical spell
                 Debug.Log("cast vertical spell");
+
+                //Instantiate(boltSpell[spellType], lineStPos, Quaternion.identity);
             }
             myState = LineState.Clean;
         }

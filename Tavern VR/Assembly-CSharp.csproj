@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Asif\NoDropInteractable.cs" />
     <Compile Include="Assets\Scripts\Asif\OrientationLineJudge.cs" />
+    <Compile Include="Assets\Scripts\Asif\SpellBall.cs" />
     <Compile Include="Assets\Scripts\Asif\SpellInteractable.cs" />
     <Compile Include="Assets\Scripts\Asif\SpellScript.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />

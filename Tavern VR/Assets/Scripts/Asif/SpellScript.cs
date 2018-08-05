@@ -5,14 +5,14 @@ using UnityEngine;
 namespace VRTK {
     public class SpellScript : MonoBehaviour {
         public VRTK_ControllerEvents myController;
-        enum MyCastState { Held, Thrown, Idle };
-        MyCastState curCast = MyCastState.Idle;
-        enum MySpellState { Bolt, Shield, Default };
-        MySpellState curSpell;
-        GameObject targetEnemy;
-        GameObject[] enemies;
+        protected enum MyCastState { Held, Thrown, Idle };
+        protected MyCastState curCast = MyCastState.Idle;
+        protected enum MySpellState { Bolt, Shield, Default };
+        protected MySpellState curSpell;
+        protected GameObject targetEnemy;
+        protected GameObject[] enemies;
         public GameObject caster;
-        Vector3[] enemyPositions;
+        protected Vector3[] enemyPositions;
 
         protected virtual void SetSpellState() {
             curSpell = MySpellState.Default;
@@ -93,6 +93,10 @@ namespace VRTK {
 
         public virtual void OnSpellUngrab() {
             //use TargetFind to set a static target for the spell
+        }
+
+        public virtual void OnSpellGrab() {
+            curCast = MyCastState.Held;
         }
 
 
