@@ -13,6 +13,7 @@ namespace VRTK {
         protected GameObject[] enemies;
         public GameObject caster;
         protected Vector3[] enemyPositions;
+        bool hasEnemies = false;
 
         protected virtual void SetSpellState() {
             curSpell = MySpellState.Default;
@@ -21,7 +22,6 @@ namespace VRTK {
 
         protected virtual void Start() {
             SetSpellState();
-            FindEnemies();
         }
 
         protected virtual void FindEnemies() {
@@ -51,6 +51,10 @@ namespace VRTK {
                     //idlestuff
                     break;
                 case MyCastState.Held:
+                    if (!hasEnemies) {
+                        hasEnemies = true;
+                        FindEnemies();
+                    }
                     TargetFind();
                     break;
                 case MyCastState.Thrown:
@@ -64,27 +68,31 @@ namespace VRTK {
                 //if caster is player, targets enemy closest to center of screen
                 float myDist = 0f;
                 Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
-                for (int i = 0; i < enemies.Length; i++) {
-                    if (Camera.main.WorldToScreenPoint(enemies[i].transform.position) != null) {
-                        enemyPositions[i] = Camera.main.WorldToScreenPoint(enemies[i].transform.position);
-                    }
-                    enemyPositions[i] = new Vector3(enemyPositions[i].x, enemyPositions[i].y, 0f);
-                    if (targetEnemy != null) {
-                        if (Vector3.Distance(enemyPositions[i], screenCenter) < myDist) {
-                            myDist = Vector3.Distance(enemyPositions[i], screenCenter);
-                            targetEnemy = enemies[i];
+                if (enemies != null) {
+                    for (int i = 0; i < enemies.Length; i++) {
+                        if (Camera.main.WorldToScreenPoint(enemies[i].transform.position) != null) {
+                            enemyPositions[i] = Camera.main.WorldToScreenPoint(enemies[i].transform.position);
                         }
-                    }
-                    else {
-                        targetEnemy = enemies[i];
-                        myDist = Vector3.Distance(enemyPositions[i], screenCenter);
+                        enemyPositions[i] = new Vector3(enemyPositions[i].x, enemyPositions[i].y, 0f);
+                        if (targetEnemy != null) {
+                            if (Vector3.Distance(enemyPositions[i], screenCenter) < myDist) {
+                                myDist = Vector3.Distance(enemyPositions[i], screenCenter);
+                                targetEnemy = enemies[i];
+                            }
+                        }
+                        else {
+                            targetEnemy = enemies[i];
+                            myDist = Vector3.Distance(enemyPositions[i], screenCenter);
+                        }
                     }
                 }
             }
             else {
                 //AI targets random from list
-                targetEnemy = enemies[Random.Range(0, enemies.Length)];
-            }
+                if (enemies != null) {
+                    targetEnemy = enemies[Random.Range(0, enemies.Length)];
+                }
+            }  
         }
 
         protected virtual void SpellCast() {
@@ -92,11 +100,13 @@ namespace VRTK {
         }
 
         public virtual void OnSpellUngrab() {
-            //use TargetFind to set a static target for the spell
+            hasEnemies = false;
         }
 
         public virtual void OnSpellGrab() {
+            //find out if holder is Camera.main.gameObject somehow
             curCast = MyCastState.Held;
+            hasEnemies = false;
         }
 
 
