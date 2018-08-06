@@ -61,9 +61,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Magic\NoDropInteractable.cs" />
     <Compile Include="Assets\Scripts\Magic\OrientationLineJudge.cs" />
+    <Compile Include="Assets\Scripts\Magic\RenderElementSpell.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellBall.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellInteractable.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellScript.cs" />
+    <Compile Include="Assets\Scripts\Magic\SpellShield.cs" />
     <Compile Include="Assets\Scripts\Tavern\DrinkScript.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />

@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace VRTK {
     public class SpellBall : SpellScript {
-        public int elementType;
-        Rigidbody spellRB;
+        public int damage = 10;
         public float speedMult;
 
         private void Awake() {
@@ -28,13 +27,9 @@ namespace VRTK {
             }
         }
         private void OnCollisionEnter(Collision collision) {
-            //if (collision.gameObject.GetComponent<SpellShield>() != null) {
-
-            //}
-            if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy") {
-
+            if (collision.gameObject == targetEnemy) {
+                //health script needed for all characters in scene
             }
         }
-
     }
 }

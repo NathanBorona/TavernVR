@@ -20,8 +20,8 @@ namespace VRTK {
         Color realCol;
         float colorLerpTime;
 
-        public GameObject[] shieldSpell;
-        public GameObject[] boltSpell;
+        public GameObject shieldSpell;
+        public GameObject boltSpell;
 
         public Renderer crystalMaterial;
         float ogValue;
@@ -118,33 +118,41 @@ namespace VRTK {
                 oldCol = crystalMaterial.material.color;
                 colorLerpTime = 0f;
             }
-
             ColorLerpDEBUG(); //ONLY RUN THIS IF USING VRTK SIMULATOR. Num1, 2, 3 change colors;
+
+            //SPELL TYPES: 0 = red, 1 = green, 2 = blue.
             if (myController.touchpadAxisChanged) {
                 if (myController.GetTouchpadAxisAngle() <= 90 && myController.GetTouchpadAxisAngle() > 45) {
                     //if in the center of the red and green tri
                     if (myController.GetTouchpadAxis().x > 0) {
                         redAm = 1f;
+                        spellType = 0;
                     }
                     else {
                         greenAm = 1f;
+                        spellType = 1;
                     }
                 }
                 else if (myController.GetTouchpadAxisAngle() > 90 && myController.GetTouchpadAxisAngle() < 120) {
                     if (myController.GetTouchpadAxis().x > 0) {
+                        //if in the half of the red and green tri
                         redAm = 0.5f;
                         greenAm = 0.25f;
+                        spellType = 0;
                     }
                     redAm = 0.25f;
                     greenAm = 0.5f;
+                    spellType = 1;
                 }
                 if (myController.GetTouchpadAxisAngle() >= 120 && myController.GetTouchpadAxisAngle() < 150) {
                     blueAm = 0.5f;
+                    spellType = 2;
                     //if in the first half of the blue tri
                 }
                 else if (myController.GetTouchpadAxisAngle() >= 150) {
                     blueAm = 1f;
                     //else if in the center of the blue tri
+                    spellType = 2;
                 }
                 else {
                     blueAm = 0.25f;
@@ -180,6 +188,7 @@ namespace VRTK {
             lineRend.positionCount = 0;
             curPosIndex = 0;
             startAllowed = true;
+            dotLineAngle = 0f;
             myState = LineState.Start;
 
         }
@@ -223,7 +232,8 @@ namespace VRTK {
                 //is horizontal spell
                 Debug.Log("cast horizontal spell");
 
-                //Instantiate(shieldSpell[spellType], lineStPos, Quaternion.identity);
+                GameObject newSpell = Instantiate(shieldSpell, lineStPos, Quaternion.identity);
+                newSpell.GetComponent<SpellShield>().elementType = spellType;
             } else if (dotLineAngle > 135f-22.5f && dotLineAngle < 135f + 22.5f) {
                 //is diagonal spell
                 Debug.Log("cast diagonal spell");
@@ -231,7 +241,8 @@ namespace VRTK {
                 //is vertical spell
                 Debug.Log("cast vertical spell");
 
-                //Instantiate(boltSpell[spellType], lineStPos, Quaternion.identity);
+                GameObject newSpell = Instantiate(boltSpell, lineStPos, Quaternion.identity);
+                newSpell.GetComponent<SpellBall>().elementType = spellType;
             }
             myState = LineState.Clean;
         }

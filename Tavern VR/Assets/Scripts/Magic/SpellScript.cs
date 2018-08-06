@@ -4,12 +4,14 @@ using UnityEngine;
 
 namespace VRTK {
     public class SpellScript : MonoBehaviour {
+        protected Rigidbody spellRB;
+        public int elementType;
         public VRTK_ControllerEvents myController;
         protected enum MyCastState { Held, Thrown, Idle };
         protected MyCastState curCast = MyCastState.Idle;
         protected enum MySpellState { Bolt, Shield, Default };
         protected MySpellState curSpell;
-        protected GameObject targetEnemy;
+        public GameObject targetEnemy;
         protected GameObject[] enemies;
         public GameObject caster;
         Vector3[] enemyPositions;
@@ -106,8 +108,8 @@ namespace VRTK {
 
         public virtual void OnSpellGrab() {
             //find out if holder is Camera.main.gameObject somehow
-            curCast = MyCastState.Held;
             hasEnemies = false;
+            curCast = MyCastState.Held;
         }
 
 
