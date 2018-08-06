@@ -12,9 +12,10 @@ namespace VRTK {
         protected GameObject targetEnemy;
         protected GameObject[] enemies;
         public GameObject caster;
-        protected Vector3[] enemyPositions;
+        Vector3[] enemyPositions;
         bool hasEnemies = false;
-
+        Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
+        float myDist = 0f;
         protected virtual void SetSpellState() {
             curSpell = MySpellState.Default;
             //overriden by their spells to set the state for debugging.
@@ -54,6 +55,7 @@ namespace VRTK {
                     if (!hasEnemies) {
                         hasEnemies = true;
                         FindEnemies();
+                        enemyPositions = new Vector3[enemies.Length];
                     }
                     TargetFind();
                     break;
@@ -66,16 +68,15 @@ namespace VRTK {
         protected virtual void TargetFind() {
             if (caster == Camera.main.gameObject) {
                 //if caster is player, targets enemy closest to center of screen
-                float myDist = 0f;
-                Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
                 if (enemies != null) {
                     for (int i = 0; i < enemies.Length; i++) {
-                        if (Camera.main.WorldToScreenPoint(enemies[i].transform.position) != null) {
-                            enemyPositions[i] = Camera.main.WorldToScreenPoint(enemies[i].transform.position);
+                        if (Camera.main.WorldToViewportPoint(enemies[i].transform.position) != null) {
+                            enemyPositions[i] = Camera.main.WorldToViewportPoint(enemies[i].transform.position);
                         }
                         enemyPositions[i] = new Vector3(enemyPositions[i].x, enemyPositions[i].y, 0f);
                         if (targetEnemy != null) {
                             if (Vector3.Distance(enemyPositions[i], screenCenter) < myDist) {
+                                Debug.Log(enemyPositions[i] + " this is the" + i + " position");
                                 myDist = Vector3.Distance(enemyPositions[i], screenCenter);
                                 targetEnemy = enemies[i];
                             }
