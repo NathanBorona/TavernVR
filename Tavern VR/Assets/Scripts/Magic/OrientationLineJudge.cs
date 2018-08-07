@@ -165,22 +165,23 @@ namespace VRTK {
             if (oldCol != tarCol) {
                 realCol = Color.Lerp(oldCol, tarCol, colorLerpTime);// this doesn't work because it's setting it to a value between 0 and 1.
                 colorLerpTime += 0.02f;
-                crystalMaterial.material.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
+                
             } // I want to put this in update, and not use oldCol as a method of judgement.
 
             if (myController.touchpadPressed) {
                 if (myController.GetTouchpadAxisAngle() <= 120) {
                     if (myController.GetTouchpadAxis().x > 0) {
-                        //red
+                        realCol = new Color(1f, 0.25f, 0.25f, ogValue);
                     }
                     else {
-                        //green
+                        realCol = new Color(0.25f, 1f, 0.25f, ogValue);
                     }
                 }
                 else {
-                    //blue
+                    realCol = new Color(0.25f, 0.25f, 1f, ogValue);
                 }
             }
+            crystalMaterial.material.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
         }
 
         void CleanUp() {
@@ -226,6 +227,7 @@ namespace VRTK {
             lineEnPos = lineRend.GetPosition(lineRend.positionCount - 1);
             lineStPos = lineRend.GetPosition(0);
             Vector3 normLine = lineEnPos - lineStPos;
+            Vector3 midLine = lineRend.GetPosition(Mathf.RoundToInt(lineRend.positionCount * 0.5f));
             dotLineAngle = Vector3.Angle(Vector3.up, normLine);
 
             if (dotLineAngle >= 90f-22.5f && dotLineAngle <= 90f+22.5f) {
@@ -236,13 +238,14 @@ namespace VRTK {
                 newSpell.GetComponent<SpellShield>().elementType = spellType;
             } else if (dotLineAngle > 135f-22.5f && dotLineAngle < 135f + 22.5f) {
                 //is diagonal spell
+                
                 Debug.Log("cast diagonal spell");
             } else {
                 //is vertical spell
                 Debug.Log("cast vertical spell");
-
                 GameObject newSpell = Instantiate(boltSpell, lineStPos, Quaternion.identity);
                 newSpell.GetComponent<SpellBall>().elementType = spellType;
+
             }
             myState = LineState.Clean;
         }

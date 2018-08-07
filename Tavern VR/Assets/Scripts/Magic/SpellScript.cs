@@ -48,6 +48,21 @@ namespace VRTK {
             }
         }
 
+        protected virtual void HighlightTarget()
+        {
+            if (caster == Camera.main.gameObject)
+            {
+                if (targetEnemy.GetComponent<ParticleSystem>() == null)
+                {
+                    targetEnemy.AddComponent<ParticleSystem>();
+                }
+                else
+                {
+                    targetEnemy.GetComponent<ParticleSystem>().Play();
+                }
+            }
+        }
+
         protected virtual void Update() {
             switch (curCast) {
                 case MyCastState.Idle:
@@ -60,6 +75,7 @@ namespace VRTK {
                         enemyPositions = new Vector3[enemies.Length];
                     }
                     TargetFind();
+                    HighlightTarget();
                     break;
                 case MyCastState.Thrown:
                     SpellCast();
@@ -78,7 +94,11 @@ namespace VRTK {
                         enemyPositions[i] = new Vector3(enemyPositions[i].x, enemyPositions[i].y, 0f);
                         if (targetEnemy != null) {
                             if (Vector3.Distance(enemyPositions[i], screenCenter) < myDist) {
-                                Debug.Log(enemyPositions[i] + " this is the" + i + " position");
+                                if (targetEnemy != null && targetEnemy.GetComponent<ParticleSystem>() != null)
+                                {
+                                    targetEnemy.GetComponent<ParticleSystem>().Stop();
+                                }
+                                //Debug.Log(enemyPositions[i] + " this is the" + i + " position");
                                 myDist = Vector3.Distance(enemyPositions[i], screenCenter);
                                 targetEnemy = enemies[i];
                             }
@@ -108,32 +128,9 @@ namespace VRTK {
 
         public virtual void OnSpellGrab() {
             //find out if holder is Camera.main.gameObject somehow
+            caster = Camera.main.gameObject;
             hasEnemies = false;
             curCast = MyCastState.Held;
         }
-
-
-        /*WIP: things needed for all spells:
-         * activate on stop grab - not sure how, but it's possible
-         * Instantiate from OrientationLineJudge
-         * 
-         * In short:
-         * Target variable
-         * Caster variable
-         * Checker to see if ungrabbed
-        */
-
-        /*WIP: things needed for ball spell:
-         * public class SpellBall : SpellScript {}
-         * target heat seeking
-         * 
-         * AI: throw ball of color
-        */
-
-        /*WIP: things needed for shield spell:
-         * shield reflects back at target if correct colour
-         * 
-         * AI: React to other thrown ball by drawing shield - of whatever colour currently selected. Need states.
-        */
     }
 }
