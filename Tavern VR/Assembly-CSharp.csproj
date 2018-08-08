@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Magic\AISpellSlinger.cs" />
     <Compile Include="Assets\Scripts\Magic\LOG.cs" />
     <Compile Include="Assets\Scripts\Magic\NoDropInteractable.cs" />
     <Compile Include="Assets\Scripts\Magic\OrientationLineJudge.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Scripts\Magic\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellShield.cs" />
     <Compile Include="Assets\Scripts\Tavern\DrinkScript.cs" />
+    <Compile Include="Assets\Scripts\Tavern\OpenDoorScript.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
