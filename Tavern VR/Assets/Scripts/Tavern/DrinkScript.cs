@@ -14,6 +14,8 @@
         public GameObject quater;
         public GameObject foam;
         public GameObject empty;
+
+        public GameObject headset;
         public float countDown = 6;
         public float time;
 
@@ -32,38 +34,40 @@
 
         public void Drinking()
         {
-            //if (HeadsetCollisionEventArgs.ReferenceEquals(full,quaters,half,quater,foam,empty))
-            //if Glass is next to headset
-            //gameObject.transform.rotation (0, -90, 0);
-            time = time + Time.deltaTime;
-            if (time >= 5)
+            if ((headset.transform.position - transform.position).magnitude < 0.5f)
             {
-                foam.SetActive(false);
-                empty.SetActive(true);
-            }
-            else if (time >= 4)
-            {
-                quater.SetActive(false);
-                foam.SetActive(true);
-            }
-            else if (time >= 3)
-            {
-                half.SetActive(false);
-                quater.SetActive(true);
-            }
-            else if (time >= 2)
-            {
-                quaters.SetActive(false);
-                half.SetActive(true);
-            }
-            else if (time >= 1)
-            {
-                full.SetActive(false);
-                quaters.SetActive(true);
-            }
-            else if (time >= 0)
-            {
-                full.SetActive(true);
+                //if Glass is next to headset
+                //gameObject.transform.rotation (0, -90, 0);
+                time = time + Time.deltaTime;
+                if (time >= 5)
+                {
+                    foam.SetActive(false);
+                    empty.SetActive(true);
+                }
+                else if (time >= 4)
+                {
+                    quater.SetActive(false);
+                    foam.SetActive(true);
+                }
+                else if (time >= 3)
+                {
+                    half.SetActive(false);
+                    quater.SetActive(true);
+                }
+                else if (time >= 2)
+                {
+                    quaters.SetActive(false);
+                    half.SetActive(true);
+                }
+                else if (time >= 1)
+                {
+                    full.SetActive(false);
+                    quaters.SetActive(true);
+                }
+                else if (time >= 0)
+                {
+                    full.SetActive(true);
+                }
             }
         }
     }
