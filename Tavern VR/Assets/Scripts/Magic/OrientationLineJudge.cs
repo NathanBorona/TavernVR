@@ -122,7 +122,8 @@ namespace VRTK {
 
             //SPELL TYPES: 0 = red, 1 = green, 2 = blue.
             if (myController.touchpadAxisChanged) {
-                if (myController.GetTouchpadAxisAngle() <= 90 && myController.GetTouchpadAxisAngle() > 45) {
+                float myAngle = myController.GetTouchpadAxisAngle();
+                {/*if (myController.GetTouchpadAxisAngle() <= 90 && myController.GetTouchpadAxisAngle() > 45) {
                     //if in the center of the red and green tri
                     if (myController.GetTouchpadAxis().x > 0) {
                         redAm = 1f;
@@ -157,8 +158,22 @@ namespace VRTK {
                 else {
                     blueAm = 0.25f;
                     //else if outside of blue
+                }*/
+
+                    //detect if red
+                    //detect if green
+                    //detect if blue
                 }
-                tarCol = new Color(redAm, greenAm, blueAm);
+                if (myAngle >= 0 && myAngle < 120) {
+                    tarCol = Color.red;
+                }
+                if (myAngle >= 120 && myAngle < 240) {
+                    tarCol = Color.green;
+                }
+                if (myAngle >= 240) {
+                    tarCol = Color.blue;
+                }
+                tarCol.a = ogValue;
                 oldCol = crystalMaterial.material.color;
             }
 
@@ -181,7 +196,7 @@ namespace VRTK {
                     realCol = new Color(0.25f, 0.25f, 1f, ogValue);
                 }
             }
-            crystalMaterial.material.color = new Color(realCol.r, realCol.g, realCol.b, ogValue);
+            crystalMaterial.material.color = realCol;
         }
 
         void CleanUp() {
