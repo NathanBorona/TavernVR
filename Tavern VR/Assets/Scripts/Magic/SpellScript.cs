@@ -89,7 +89,6 @@ namespace VRTK {
 
         public virtual void OnSpellUngrab() {
             hasEnemies = false;
-            targetEnemy.GetComponent<ParticleSystem>().Stop();
         }
 
         public virtual void OnSpellGrab() {
