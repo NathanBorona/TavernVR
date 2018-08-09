@@ -58,7 +58,7 @@ namespace VRTK {
         }
 
 
-        protected virtual void Update() {
+        protected virtual void FixedUpdate() {
             switch (curCast) {
                 case MyCastState.Idle:
                     //idlestuff
