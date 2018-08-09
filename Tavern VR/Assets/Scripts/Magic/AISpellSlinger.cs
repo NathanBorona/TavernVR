@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace VRTK {
-    public class AISpellSlinger : MonoBehaviour {
+namespace VRTK
+{
+    public class AISpellSlinger : MonoBehaviour
+    {
         public bool AIENABLED;
         float timer;
         SpellScript mySpellScript;
@@ -19,7 +21,8 @@ namespace VRTK {
         enum MyState { Cast, Throw };
         MyState myState = MyState.Cast;
 
-        private void Start() {
+        private void Start()
+        {
             timer = 0f;
         }
 
@@ -29,18 +32,23 @@ namespace VRTK {
         //on "casting" state, instantiate spell and "grab" it
         //on "throwing" state, start the animation that uses the function below
 
-        private void Update() {
-            if (Input.GetKeyDown(KeyCode.Alpha0)) {
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
                 AIENABLED = !AIENABLED;
             }
-            if (isHoldingSpell) {
+            if (isHoldingSpell)
+            {
                 myCastSpell.transform.position = myCastLoc.transform.position;
             }
-            switch (myState) {
+            switch (myState)
+            {
                 case (MyState.Cast):
                     if (AIENABLED == true)
-                    timer += Time.deltaTime;
-                    if (timer >= spellCooldown) {
+                        timer += Time.deltaTime;
+                    if (timer >= spellCooldown)
+                    {
                         ChooseCastingHand();
                     }
                     break;
@@ -51,7 +59,8 @@ namespace VRTK {
             }
         }
 
-        void ChooseCastingHand() {
+        void ChooseCastingHand()
+        {
             timer = 0f;
             myCastLoc = hands[Random.Range(0, hands.Length)];
             myCastSpell = Instantiate(boltSpell, myCastLoc.transform.position, myCastLoc.transform.rotation);
@@ -62,7 +71,8 @@ namespace VRTK {
             myState = MyState.Throw;
         }
 
-        public void UngrabAIAnimFunct() {
+        public void UngrabAIAnimFunct()
+        {
             isHoldingSpell = false;
             mySpellScript.OnSpellUngrab();
         }
