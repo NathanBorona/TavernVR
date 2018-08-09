@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/TavernBarScene.unity
-=======
-- path: Assets/Scenes/TestMagicRecogScene.unity
->>>>>>> de2dc9187b45998004e39a14982e07c5dd9590b5
   isLoaded: 1
   isActive: 1
