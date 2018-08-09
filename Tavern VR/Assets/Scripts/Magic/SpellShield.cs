@@ -18,7 +18,7 @@ namespace VRTK {
             curCast = MyCastState.Thrown;
         }
         protected override void SpellCast() {
-            
+            Destroy(gameObject);
         }
         private void OnCollisionEnter(Collision collision) {
             if (collision.gameObject.GetComponent<SpellBall>() != null) {
