@@ -121,6 +121,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 198635932}
+  - component: {fileID: 198635933}
   m_Layer: 0
   m_Name: TestEnemyAnimholder
   m_TagString: Untagged
@@ -142,6 +143,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &198635933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198635931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416e81ac8568d354291046f3645668a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIENABLED: 0
+  boltSpell: {fileID: 1426205548919604, guid: c667a7ff31df8f246acc002aa0efbdd3, type: 2}
+  spellCooldown: 0
+  hands:
+  - {fileID: 1803504438}
 --- !u!1 &539784772
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +517,11 @@ Prefab:
         type: 2}
       propertyPath: SubModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198875230334134388, guid: c667a7ff31df8f246acc002aa0efbdd3,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c667a7ff31df8f246acc002aa0efbdd3, type: 2}
@@ -993,3 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416e81ac8568d354291046f3645668a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AIENABLED: 0
+  boltSpell: {fileID: 0}
+  spellCooldown: 0
+  hands: []
