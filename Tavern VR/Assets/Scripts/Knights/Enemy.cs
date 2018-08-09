@@ -19,8 +19,11 @@ public class Enemy : MonoBehaviour {
 
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
+    void Move() {
+
+    } 
+
+    private void OnTriggerEnter(Collider other) {
         //if player is passes enemy trigger and health is greater than 0
         if (other.gameObject.CompareTag("Sword"))
         {
@@ -29,8 +32,7 @@ public class Enemy : MonoBehaviour {
     }
 
     // Create our death effect and destroy ourself.
-    protected void Kill()
-    {
+    protected void Kill() {
         Instantiate(myDeathEffect, transform.position, Quaternion.identity);
         deathAudioSource.Play();
         Destroy(gameObject);
