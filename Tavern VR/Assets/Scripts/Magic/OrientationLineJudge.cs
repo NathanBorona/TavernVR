@@ -166,12 +166,17 @@ namespace VRTK {
                 }
                 if (myAngle >= 0 && myAngle < 120) {
                     tarCol = Color.red;
+                    spellType = 0;
                 }
                 if (myAngle >= 120 && myAngle < 240) {
                     tarCol = Color.green;
+                    spellType = 1;
+
                 }
                 if (myAngle >= 240) {
                     tarCol = Color.blue;
+                    spellType = 2;
+
                 }
                 tarCol.a = ogValue;
                 oldCol = crystalMaterial.material.color;
