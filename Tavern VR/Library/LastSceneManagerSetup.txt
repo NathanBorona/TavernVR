@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/TestKnights.unity
-=======
-- path: Assets/Scenes/TavernBarScene.unity
->>>>>>> 20031e28a691bffd07b955be61883c12efe07566
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
