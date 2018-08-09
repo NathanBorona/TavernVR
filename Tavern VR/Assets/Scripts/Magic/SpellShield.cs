@@ -17,8 +17,13 @@ namespace VRTK {
             base.OnSpellGrab();
             curCast = MyCastState.Thrown;
         }
-        protected override void SpellCast() {
+        public override void OnSpellUngrab()
+        {
+            base.OnSpellUngrab();
             Destroy(gameObject);
+        }
+        protected override void SpellCast() {
+            
         }
         private void OnCollisionEnter(Collision collision) {
             if (collision.gameObject.GetComponent<SpellBall>() != null) {
