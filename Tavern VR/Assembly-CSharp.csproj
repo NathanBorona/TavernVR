@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MagicBob.cs" />
     <Compile Include="Assets\Scripts\Knights\Enemy.cs" />
     <Compile Include="Assets\Scripts\Knights\Player.cs" />
     <Compile Include="Assets\Scripts\Knights\SwordScript.cs" />
