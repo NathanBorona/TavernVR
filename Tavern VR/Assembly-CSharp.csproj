@@ -431,44 +431,17 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/rwilliams6/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/rwilliams6/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/rwilliams6/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/rwilliams6/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-=======
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
->>>>>>> feb9479063c9324e572e167973855cc22ab54d3b
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-<<<<<<< HEAD
-      <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-=======
-      <HintPath>C:/Users/Ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
->>>>>>> f6937ed87e6dcbcca409bdd646e011872f3cfff0
->>>>>>> feb9479063c9324e572e167973855cc22ab54d3b
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/ncorona/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -642,11 +615,7 @@
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Locator">
-<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
-=======
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
->>>>>>> feb9479063c9324e572e167973855cc22ab54d3b
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -657,12 +626,9 @@
     <Reference Include="UnityEngine.Timeline">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
     <Reference Include="UnityEngine.UIAutomation">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
     </Reference>
-=======
->>>>>>> feb9479063c9324e572e167973855cc22ab54d3b
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
@@ -673,24 +639,10 @@
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-<<<<<<< HEAD
       <HintPath>C:/Users/ncorona/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/ncorona/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-=======
-<<<<<<< HEAD
-      <HintPath>C:/Users/rwilliams6/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/rwilliams6/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-=======
-      <HintPath>C:/Users/Ajuran/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Ajuran/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
->>>>>>> f6937ed87e6dcbcca409bdd646e011872f3cfff0
->>>>>>> feb9479063c9324e572e167973855cc22ab54d3b
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
