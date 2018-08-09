@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/TestMagicRecogScene.unity
-=======
-- path: Assets/Scenes/TestKnights.unity
->>>>>>> 2710be6d856b3deaea075e278fade300409af2c2
   isLoaded: 1
   isActive: 1
