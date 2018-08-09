@@ -23,11 +23,13 @@ namespace VRTK {
             if (targetEnemy != null) {
                 if (!hasStopped) {
                     spellRB.AddForce(spellRB.mass * -spellRB.velocity);
-                    if (spellRB.velocity.sqrMagnitude <= 0.25f) {
+                    if (spellRB.velocity.sqrMagnitude <= 0.05f) {
                         hasStopped = true;
                     }
                 }
                 else {
+                    spellRB.AddForce(spellRB.mass * 0.5f * -spellRB.velocity);
+                    if (spellRB.velocity.sqrMagnitude < 50f)
                     spellRB.AddForce(spellRB.mass * speedMult * Vector3.Normalize(targetEnemy.transform.position - transform.position));
                 }
                 //use targetEnemy as target
