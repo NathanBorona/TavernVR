@@ -68,7 +68,10 @@
     <Compile Include="Assets\Scripts\Magic\SpellInteractable.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellShield.cs" />
+    <Compile Include="Assets\Scripts\Tavern\BarTenderTalk.cs" />
     <Compile Include="Assets\Scripts\Tavern\DrinkScript.cs" />
+    <Compile Include="Assets\Scripts\Tavern\KightsTalk.cs" />
+    <Compile Include="Assets\Scripts\Tavern\MagesTalk.cs" />
     <Compile Include="Assets\Scripts\Tavern\OpenDoorScript.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
