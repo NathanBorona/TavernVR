@@ -47,28 +47,32 @@ namespace VRTK
                 case (MyState.Cast):
                     if (AIENABLED == true)
                         timer += Time.deltaTime;
+                    if (timer >= 0.5* spellCooldown && !isHoldingSpell) {
+                        myElement = Random.Range(0, 3);
+                        ChooseCastingHand();
+                    }
                     if (timer >= spellCooldown)
                     {
-                        ChooseCastingHand();
+                        timer = 0f;
+                        myState = MyState.Throw;
                     }
                     break;
                 case (MyState.Throw):
                     myAnimator = myCastLoc.GetComponent<Animator>();
-                    myAnimator.SetTrigger("Throw");
+                    myAnimator.SetTrigger("CastSpell");
+                    myState = MyState.Cast;
                     break;
             }
         }
 
         void ChooseCastingHand()
         {
-            timer = 0f;
             myCastLoc = hands[Random.Range(0, hands.Length)];
             myCastSpell = Instantiate(boltSpell, myCastLoc.transform.position, myCastLoc.transform.rotation);
             mySpellScript = myCastSpell.GetComponent<SpellScript>();
             mySpellScript.elementType = myElement;
-            mySpellScript.OnSpellGrab();
+            mySpellScript.OnSpellGrabNPC(gameObject);
             isHoldingSpell = true;
-            myState = MyState.Throw;
         }
 
         public void UngrabAIAnimFunct()
