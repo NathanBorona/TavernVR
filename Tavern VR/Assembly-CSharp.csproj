@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Magic\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellShield.cs" />
     <Compile Include="Assets\Scripts\Tavern\BarTenderTalk.cs" />
+    <Compile Include="Assets\Scripts\Tavern\Cupcake.cs" />
     <Compile Include="Assets\Scripts\Tavern\DrinkScript.cs" />
     <Compile Include="Assets\Scripts\Tavern\KightsTalk.cs" />
     <Compile Include="Assets\Scripts\Tavern\MagesTalk.cs" />
