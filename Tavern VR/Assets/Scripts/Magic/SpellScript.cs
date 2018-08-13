@@ -56,6 +56,7 @@ namespace VRTK {
                 }
             }
         }
+        //ERROR: sometimes this targets itself in AI.
 
 
         protected virtual void FixedUpdate() {
@@ -94,6 +95,11 @@ namespace VRTK {
         public virtual void OnSpellGrab() {
             //find out if holder is Camera.main.gameObject somehow
             caster = Camera.main.gameObject;
+            hasEnemies = false;
+            curCast = MyCastState.Held;
+        }
+        public virtual void OnSpellGrabNPC(GameObject nPC) {
+            caster = nPC;
             hasEnemies = false;
             curCast = MyCastState.Held;
         }
