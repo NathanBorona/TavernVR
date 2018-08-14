@@ -37,7 +37,8 @@ namespace VRTK {
             }
         }
         private void OnCollisionEnter(Collision collision) {
-            if (collision.gameObject == targetEnemy) {
+            if (collision.gameObject == targetEnemy && collision.gameObject.GetComponent<MagicHealth>() != null) {
+                collision.gameObject.GetComponent<MagicHealth>().Damage(damage);
                 //health script needed for all characters in scene
             }
         }
