@@ -7,6 +7,9 @@ TagManager:
   - LeftController
   - RightController
   - Enemy
+  - KnightDoor
+  - Exit
+  - MageDoor
   layers:
   - Default
   - TransparentFX
