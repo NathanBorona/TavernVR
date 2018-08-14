@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TavernBarScene.unity
+    guid: 2a362b1b7617e1849b10147800dea4de
+  - enabled: 1
+    path: Assets/Scenes/TestKnights.unity
+    guid: e010c5a40dc066942b03952ffbd19bb7
+  - enabled: 1
+    path: Assets/Scenes/MageRoom.unity
+    guid: 4466d0831fcc1454bb5da7acbd23b257
+  m_configObjects: {}

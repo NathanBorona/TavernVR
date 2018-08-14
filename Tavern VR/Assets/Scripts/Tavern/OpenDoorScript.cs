@@ -13,10 +13,11 @@ namespace VRTK {
             base.StartUsing(currentUsingObject);
             //Change this to the scene that the door will load
             //SceneManager.LoadScene(1);
-            //Debug.Log("ThisIsWorking");
+            Debug.Log("door");
             if (tag == ("KnightDoor"))
             {
                 Knight();
+                Debug.Log("Kight");
             }
             if (tag == ("MageDoor"))
             {

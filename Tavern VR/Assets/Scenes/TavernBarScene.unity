@@ -7955,7 +7955,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 588049601}
-  - component: {fileID: 588049602}
+  - component: {fileID: 588049603}
+  - component: {fileID: 588049604}
   m_Layer: 0
   m_Name: Door Knight
   m_TagString: KnightDoor
@@ -7980,16 +7981,27 @@ Transform:
   m_Father: {fileID: 1227601626}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &588049602
+--- !u!65 &588049603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 588049600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 1.3, z: 0.21}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &588049604
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114405113728226110, guid: 221131d0f307c1b45b88dee9b5af03a3,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 588049600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3525884aeca56be49aee02e50144deb5, type: 3}
+  m_Script: {fileID: 11500000, guid: fcaeeaeff058adf449a953f21704764e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
@@ -8004,11 +8016,11 @@ MonoBehaviour:
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
+  isUsable: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
-  useOverrideButton: 0
+  useOverrideButton: 7
   allowedUseControllers: 0
   usingState: 0
 --- !u!1 &600047392
