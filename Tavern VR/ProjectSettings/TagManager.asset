@@ -10,6 +10,7 @@ TagManager:
   - KnightDoor
   - Exit
   - MageDoor
+  - Tavern
   layers:
   - Default
   - TransparentFX

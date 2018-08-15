@@ -25,7 +25,7 @@ namespace VRTK {
             }
             if (tag == ("Tavern"))
             {
-                Quit();
+                Tavern();
             }
 
         }
@@ -44,7 +44,7 @@ namespace VRTK {
         {
             SceneManager.LoadScene("TestKnights");
         }
-        void Knight()
+        void Tavern()
         {
             SceneManager.LoadScene("TavernBarScene");
         }
