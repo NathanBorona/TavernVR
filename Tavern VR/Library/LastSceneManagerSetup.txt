@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/TerrainMage.unity
+=======
+- path: Assets/Scenes/TestKnights.unity
+>>>>>>> 358b9a635f94137b3cabfcbdcf2a1ca4ab00727b
   isLoaded: 1
   isActive: 1
