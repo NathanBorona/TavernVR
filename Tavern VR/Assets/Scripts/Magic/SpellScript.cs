@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace VRTK {
     public class SpellScript : MonoBehaviour {
+        bool isPlayer;
         protected Rigidbody spellRB;
         public int elementType;
         public VRTK_ControllerEvents myController;
@@ -29,7 +30,7 @@ namespace VRTK {
 
         protected virtual void FindEnemies() {
             //either gets a list of all tagged enemies or a list of all enemies minus the caster (for AI casting)
-            if (caster == Camera.main.gameObject) {
+            if (isPlayer) {
                 //the caster is the player
                 enemies = GameObject.FindGameObjectsWithTag("Enemy");
                 //simply find all enemy "Enemy"s
@@ -44,7 +45,7 @@ namespace VRTK {
                     allTargets.Add(targets[i]);
                     //for the list of allTargets, add all enemies
                 }
-                allTargets.Add(Camera.main.gameObject);
+                allTargets.Add(GameObject.FindGameObjectWithTag("Player"));
                 //add the player to the list
                 allTargets.Remove(caster);
                 //then remove the caster from the list
@@ -93,13 +94,15 @@ namespace VRTK {
         }
 
         public virtual void OnSpellGrab() {
-            //find out if holder is Camera.main.gameObject somehow
-            caster = Camera.main.gameObject;
+            //find out if holder is GameObject.FindGameObjectWithTag("Player") somehow
+            caster = GameObject.FindGameObjectWithTag("Player");
+            isPlayer = true;
             hasEnemies = false;
             curCast = MyCastState.Held;
         }
         public virtual void OnSpellGrabNPC(GameObject nPC) {
             caster = nPC;
+            isPlayer = false;
             hasEnemies = false;
             curCast = MyCastState.Held;
         }
