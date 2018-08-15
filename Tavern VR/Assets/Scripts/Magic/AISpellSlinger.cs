@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace VRTK
-{
-    public class AISpellSlinger : MonoBehaviour
-    {
+namespace VRTK {
+    public class AISpellSlinger : MonoBehaviour {
+        AnimationEventParse myHandScript;
         public bool AIENABLED;
         float timer;
         SpellScript mySpellScript;
@@ -21,8 +20,7 @@ namespace VRTK
         enum MyState { Cast, Throw };
         MyState myState = MyState.Cast;
 
-        private void Start()
-        {
+        private void Start() {
             timer = 0f;
         }
 
@@ -32,27 +30,22 @@ namespace VRTK
         //on "casting" state, instantiate spell and "grab" it
         //on "throwing" state, start the animation that uses the function below
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha0))
-            {
+        private void Update() {
+            if (Input.GetKeyDown(KeyCode.Alpha0)) {
                 AIENABLED = !AIENABLED;
             }
-            if (isHoldingSpell)
-            {
+            if (isHoldingSpell) {
                 myCastSpell.transform.position = myCastLoc.transform.position;
             }
-            switch (myState)
-            {
+            switch (myState) {
                 case (MyState.Cast):
                     if (AIENABLED == true)
                         timer += Time.deltaTime;
-                    if (timer >= 0.5* spellCooldown && !isHoldingSpell) {
+                    if (timer >= 0.5 * spellCooldown && !isHoldingSpell) {
                         myElement = Random.Range(0, 3);
                         ChooseCastingHand();
                     }
-                    if (timer >= spellCooldown)
-                    {
+                    if (timer >= spellCooldown) {
                         timer = 0f;
                         myState = MyState.Throw;
                     }
@@ -65,9 +58,10 @@ namespace VRTK
             }
         }
 
-        void ChooseCastingHand()
-        {
+        void ChooseCastingHand() {
             myCastLoc = hands[Random.Range(0, hands.Length)];
+            myHandScript = myCastLoc.GetComponent<AnimationEventParse>();
+            myHandScript.myParent = this;
             myCastSpell = Instantiate(boltSpell, myCastLoc.transform.position, myCastLoc.transform.rotation);
             mySpellScript = myCastSpell.GetComponent<SpellScript>();
             mySpellScript.elementType = myElement;
@@ -75,8 +69,7 @@ namespace VRTK
             isHoldingSpell = true;
         }
 
-        public void UngrabAIAnimFunct()
-        {
+        public void UngrabAIAnimFunct() {
             isHoldingSpell = false;
             mySpellScript.OnSpellUngrab();
         }
