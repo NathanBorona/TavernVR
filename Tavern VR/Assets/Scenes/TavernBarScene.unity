@@ -6651,6 +6651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 463370017}
   - component: {fileID: 463370018}
+  - component: {fileID: 463370019}
   m_Layer: 0
   m_Name: Door Exit
   m_TagString: Exit
@@ -6705,6 +6706,18 @@ MonoBehaviour:
   useOverrideButton: 7
   allowedUseControllers: 0
   usingState: 0
+--- !u!65 &463370019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 463370016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 1.19, z: 0.14}
+  m_Center: {x: 0, y: 0, z: 0.09}
 --- !u!1 &466935706
 GameObject:
   m_ObjectHideFlags: 0
@@ -20264,6 +20277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762558694}
   - component: {fileID: 1762558695}
+  - component: {fileID: 1762558696}
   m_Layer: 0
   m_Name: Door Mage
   m_TagString: MageDoor
@@ -20318,6 +20332,18 @@ MonoBehaviour:
   useOverrideButton: 7
   allowedUseControllers: 0
   usingState: 0
+--- !u!65 &1762558696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762558693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.71, y: 1.16, z: -0.07}
+  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!1 &1763308607
 GameObject:
   m_ObjectHideFlags: 0
