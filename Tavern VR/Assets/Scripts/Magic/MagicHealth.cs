@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace VRTK {
     public class MagicHealth : MonoBehaviour {
+        public bool isPlayer = false;
         public int maxHealth;
         int curHealth;
 
@@ -19,8 +20,10 @@ namespace VRTK {
 
         public void ThisDeath() {
             //any instantiated effects
-
-            Destroy(gameObject);
+            if (!isPlayer) {
+                gameObject.GetComponent<AISpellSlinger>().spellCooldown -= 1f;
+                curHealth = maxHealth;
+            }
         }
     }
 }
