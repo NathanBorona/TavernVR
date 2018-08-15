@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         myTimer += Time.deltaTime;
-        Debug.Log(myTimer);
+        //Debug.Log(myTimer);
 
         Lives();
 
@@ -63,10 +63,11 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         //if player is passes enemy trigger and health is greater than 0
-        if (other.gameObject.CompareTag("Enemy") && lives > 0 && isBlocking == false)
+        if (other.gameObject.CompareTag("Target") && lives > 0 && isBlocking == false)
         {
             lives -= 1;
             hitAudio.Play();
+            print("Hit");
         }
     }
 }

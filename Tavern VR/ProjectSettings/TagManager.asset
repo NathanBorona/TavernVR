@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - LeftController
-  - RightController
-  - Enemy
-  - KnightDoor
-  - Exit
-  - MageDoor
-  - Sword
-  - Shield
-  - Target
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -22,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Spell
-  - Characters
-  - Catalyst
+  - 
+  - 
+  - 
   - 
   - 
   - 
