@@ -10,7 +10,9 @@ TagManager:
   - KnightDoor
   - Exit
   - MageDoor
-  - Tavern
+  - Sword
+  - Shield
+  - Target
   layers:
   - Default
   - TransparentFX
