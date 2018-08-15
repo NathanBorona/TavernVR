@@ -11,12 +11,44 @@ namespace VRTK {
         public override void StartUsing(VRTK_InteractUse currentUsingObject)
         {
             base.StartUsing(currentUsingObject);
-            //Change this to the scene that the door will load
-            SceneManager.LoadScene(1);  
-            Debug.Log("ThisIsWorking");
+            if (tag == ("KnightDoor"))
+            {
+                Knight();
+            }
+            if (tag == ("MageDoor"))
+            {
+                Mage();
+            }
+            if (tag == ("Exit"))
+            {
+                Quit();
+            }
+            if (tag == ("Tavern"))
+            {
+                Quit();
+            }
 
         }
+
+        void Quit()
+        {
+            Application.Quit();
+        }
+
+        void Mage()
+        {
+            SceneManager.LoadScene("MageRoom");
+        }
+
+        void Knight()
+        {
+            SceneManager.LoadScene("TestKnights");
+        }
+        void Knight()
+        {
+            SceneManager.LoadScene("TavernBarScene");
+        }
+
     }
 
-    
 }
