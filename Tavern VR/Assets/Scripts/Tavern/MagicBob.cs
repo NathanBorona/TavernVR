@@ -23,6 +23,7 @@ public class MagicBob : MonoBehaviour
         maxHeight = transform.position.y + maxHeight;
         minHeight = transform.position.y - minHeight;
         targetHeight = maxHeight;
+        bobSpeed = bobSpeed * Random.Range(0.5f, 1.5f) * 0.5f;
         currentBobSpeed = bobSpeed;
         
     }
