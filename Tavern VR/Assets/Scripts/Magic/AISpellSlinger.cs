@@ -34,27 +34,28 @@ namespace VRTK {
             if (Input.GetKeyDown(KeyCode.Alpha0)) {
                 AIENABLED = !AIENABLED;
             }
-            if (isHoldingSpell) {
-                myCastSpell.transform.position = myCastLoc.transform.position;
-            }
-            switch (myState) {
-                case (MyState.Cast):
-                    if (AIENABLED == true)
+            if (AIENABLED == true) {
+                if (isHoldingSpell) {
+                    myCastSpell.transform.position = myCastLoc.transform.position;
+                }
+                switch (myState) {
+                    case (MyState.Cast):
                         timer += Time.deltaTime;
-                    if (timer >= 0.5 * spellCooldown && !isHoldingSpell) {
-                        myElement = Random.Range(0, 3);
-                        ChooseCastingHand();
-                    }
-                    if (timer >= spellCooldown) {
-                        timer = 0f;
-                        myState = MyState.Throw;
-                    }
-                    break;
-                case (MyState.Throw):
-                    myAnimator = myCastLoc.GetComponent<Animator>();
-                    myAnimator.SetTrigger("CastSpell");
-                    myState = MyState.Cast;
-                    break;
+                        if (timer >= 0.5 * spellCooldown && !isHoldingSpell) {
+                            myElement = Random.Range(0, 3);
+                            ChooseCastingHand();
+                        }
+                        if (timer >= spellCooldown) {
+                            timer = 0f;
+                            myState = MyState.Throw;
+                        }
+                        break;
+                    case (MyState.Throw):
+                        myAnimator = myCastLoc.GetComponent<Animator>();
+                        myAnimator.SetTrigger("CastSpell");
+                        myState = MyState.Cast;
+                        break;
+                }
             }
         }
 
