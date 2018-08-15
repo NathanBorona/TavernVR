@@ -59,9 +59,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HUDScript.cs" />
     <Compile Include="Assets\Scripts\Knights\Enemy.cs" />
     <Compile Include="Assets\Scripts\Knights\Player.cs" />
     <Compile Include="Assets\Scripts\Knights\SwordScript.cs" />
+    <Compile Include="Assets\Scripts\Knights\targetScript.cs" />
     <Compile Include="Assets\Scripts\Magic\AISpellSlinger.cs" />
     <Compile Include="Assets\Scripts\Magic\AnimationEventParse.cs" />
     <Compile Include="Assets\Scripts\Magic\LOG.cs" />
