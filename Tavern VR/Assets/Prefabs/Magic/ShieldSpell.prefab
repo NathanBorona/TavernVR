@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 4502489926065372}
   - component: {fileID: 33868744204365406}
   - component: {fileID: 23384332768908282}
+  - component: {fileID: 114108427511089726}
   - component: {fileID: 135773578703101122}
   - component: {fileID: 198025400492621372}
   - component: {fileID: 199667479681900472}
@@ -157,7 +158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4202343012296900
 Transform:
   m_ObjectHideFlags: 1
@@ -452,6 +453,18 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114108427511089726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689879501689544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f29d5937146d54aa5cc87ff420c66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -50
 --- !u!114 &114323857698266554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f29d5937146d54aa5cc87ff420c66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 50
 --- !u!114 &114948374053548766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -542,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f29d5937146d54aa5cc87ff420c66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
 --- !u!114 &114977268212694630
 MonoBehaviour:
   m_ObjectHideFlags: 1
