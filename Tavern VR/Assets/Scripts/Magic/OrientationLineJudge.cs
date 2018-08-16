@@ -242,30 +242,35 @@ namespace VRTK {
         }
 
         void StopDraw() {
-            //on stop pressing trigger
-            //judge line and instantiate effect
-            lineEnPos = lineRend.GetPosition(lineRend.positionCount - 1);
-            lineStPos = lineRend.GetPosition(0);
-            Vector3 normLine = lineEnPos - lineStPos;
-            Vector3 midLine = lineRend.GetPosition(Mathf.RoundToInt(lineRend.positionCount * 0.5f));
-            dotLineAngle = Vector3.Angle(Vector3.up, normLine);
+            //Debug.Log(lineRend.positionCount);
+            if (lineRend.positionCount >= 3) {
+                //on stop pressing trigger
+                //judge line and instantiate effect
+                lineEnPos = lineRend.GetPosition(lineRend.positionCount - 1);
+                lineStPos = lineRend.GetPosition(0);
+                Vector3 normLine = lineEnPos - lineStPos;
+                Vector3 midLine = lineRend.GetPosition(Mathf.RoundToInt(lineRend.positionCount * 0.5f));
+                dotLineAngle = Vector3.Angle(Vector3.up, normLine);
 
-            if (dotLineAngle >= 90f-22.5f && dotLineAngle <= 90f+22.5f) {
-                //is horizontal spell
-                Debug.Log("cast horizontal spell");
+                if (dotLineAngle >= 90f - 22.5f && dotLineAngle <= 90f + 22.5f) {
+                    //is horizontal spell
+                    Debug.Log("cast horizontal spell");
 
-                GameObject newSpell = Instantiate(shieldSpell, lineStPos, Quaternion.identity);
-                newSpell.GetComponent<SpellShield>().elementType = spellType;
-            } else if (dotLineAngle > 135f-22.5f && dotLineAngle < 135f + 22.5f) {
-                //is diagonal spell
-                
-                Debug.Log("cast diagonal spell");
-            } else {
-                //is vertical spell
-                Debug.Log("cast vertical spell");
-                GameObject newSpell = Instantiate(boltSpell, lineStPos, Quaternion.identity);
-                newSpell.GetComponent<SpellBall>().elementType = spellType;
+                    GameObject newSpell = Instantiate(shieldSpell, midLine, Quaternion.identity);
+                    newSpell.GetComponent<SpellShield>().elementType = spellType;
+                }
+                else if (dotLineAngle > 135f - 22.5f && dotLineAngle < 135f + 22.5f) {
+                    //is diagonal spell
 
+                    Debug.Log("cast diagonal spell");
+                }
+                else {
+                    //is vertical spell
+                    Debug.Log("cast vertical spell");
+                    GameObject newSpell = Instantiate(boltSpell, midLine, Quaternion.identity);
+                    newSpell.GetComponent<SpellBall>().elementType = spellType;
+
+                }
             }
             myState = LineState.Clean;
         }
