@@ -62,7 +62,12 @@ ModelImporter:
     2300000: pSphere4
     3300000: pSphere4
     4300000: pSphere4
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: bf5a5d57352dfa04a88243a34580c0ad, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
