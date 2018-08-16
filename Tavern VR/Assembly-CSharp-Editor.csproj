@@ -75,17 +75,17 @@
     <Compile Include="Assets\VRTK\Editor\VRTK_SDKSetupEditor.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_SupportInfoWindow.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_UpdatePrompt.cs" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/Users/TEMP/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/TEMP/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/TEMP/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/TEMP/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/TEMP/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/TEMP/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2018.1.0/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
