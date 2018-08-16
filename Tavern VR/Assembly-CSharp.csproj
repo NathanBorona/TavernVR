@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Knights\targetScript.cs" />
     <Compile Include="Assets\Scripts\Magic\AISpellSlinger.cs" />
     <Compile Include="Assets\Scripts\Magic\AnimationEventParse.cs" />
+    <Compile Include="Assets\Scripts\Magic\HealthTorches.cs" />
     <Compile Include="Assets\Scripts\Magic\LOG.cs" />
     <Compile Include="Assets\Scripts\Magic\MagicHealth.cs" />
     <Compile Include="Assets\Scripts\Magic\NoDropInteractable.cs" />
