@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class SpawnScript : MonoBehaviour {
 
-    public GameObject Target;
+    public GameObject[] Target;
     public int rnd;
+    public int rnd2;
+    public float incroment = 5f;
+    public float timer;
+    public float cont;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -14,23 +19,66 @@ public class SpawnScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        timer += Time.deltaTime;
+        cont += Time.deltaTime;
+
+        Difficulty();
+        if (timer >= incroment)
+        {
+            TargetSelect();
+        }
 	}
 
-    public void SpawnPos ()
+    public void Difficulty()
+    {
+        if (cont >= 180)
+        {
+            incroment = 0.5f;
+        }
+        else if (cont >= 120)
+        {
+            incroment = 1f;
+        }
+        else if (cont >= 60)
+        {
+            incroment = 2f;
+        }
+        else if (cont >= 20)
+        {
+            incroment = 2.5f;
+        }
+    }
+
+    public void SpawnPos(GameObject objectToSpawn)
     {
         rnd = Random.Range(1, 4);
         if (rnd == 1)
         {
-            Instantiate(Target,new Vector3(-69f, 1.7f, 0f),Quaternion.Euler(0f, 90f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.7f, 0f), Quaternion.Euler(0f, 90f, 0f));
+            timer = 0;
         }
         if (rnd == 2)
         {
-            Instantiate(Target, new Vector3(-3f, 1.7f, 5f), Quaternion.Euler(0f, 120f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.7f, 5f), Quaternion.Euler(0f, 120f, 0f));
+            timer = 0;
         }
         if (rnd == 3)
         {
-            Instantiate(Target, new Vector3(3f, 1.7f, 5f), Quaternion.Euler(0f, 50f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.7f, -5f), Quaternion.Euler(0f, 60f, 0f));
+            timer = 0;
         }
     }
+
+        public void TargetSelect ()
+        {
+        rnd2 = Random.Range(1, 3);
+            if (rnd2 == 1)
+            {
+            SpawnPos(Target[0]);
+            }
+            if (rnd2 == 1)
+            {
+            SpawnPos(Target[1]);
+            }
+        }
 }
