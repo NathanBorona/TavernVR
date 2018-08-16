@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace VRTK {
     public class SpellBall : SpellScript {
-        public int damage = 10;
+        public int damage = 1;
         public float speedMult;
         bool hasStopped = false;
 
