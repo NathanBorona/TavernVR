@@ -12,6 +12,7 @@ TagManager:
   - Shield
   - Sword
   - Tavern
+  - Wall
   layers:
   - Default
   - TransparentFX
