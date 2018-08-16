@@ -521,7 +521,7 @@ MonoBehaviour:
   myController: {fileID: 0}
   targetEnemy: {fileID: 0}
   caster: {fileID: 0}
-  damage: 10
+  damage: 1
   speedMult: 5
 --- !u!122 &122136142292052962
 Halo:
@@ -564,7 +564,7 @@ SphereCollider:
   m_GameObject: {fileID: 1524017966636596}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -588,7 +588,7 @@ SphereCollider:
   m_GameObject: {fileID: 1301848891705608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -600,7 +600,7 @@ SphereCollider:
   m_GameObject: {fileID: 1564543112104024}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

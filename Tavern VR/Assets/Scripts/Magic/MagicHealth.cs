@@ -5,14 +5,15 @@ namespace VRTK {
     public class MagicHealth : MonoBehaviour {
         public bool isPlayer = false;
         public int maxHealth;
-        int curHealth;
+        public int curHealth;
 
         private void Start() {
             curHealth = maxHealth;
         }
 
-        public void Damage(int d) {
-            curHealth -= d;
+        public void Damage(int d, GameObject whatHitMe) {
+            Debug.Log("OH MY GOD SO MANY OF THESE OH NO" + whatHitMe.name);
+            curHealth = curHealth - d;
             if (curHealth <= 0) {
                 ThisDeath();
             }

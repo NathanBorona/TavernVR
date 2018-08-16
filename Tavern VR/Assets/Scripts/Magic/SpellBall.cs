@@ -38,7 +38,7 @@ namespace VRTK {
         }
         private void OnCollisionEnter(Collision collision) {
             if (collision.gameObject == targetEnemy && collision.gameObject.GetComponent<MagicHealth>() != null) {
-                collision.gameObject.GetComponent<MagicHealth>().Damage(damage);
+                collision.gameObject.GetComponent<MagicHealth>().Damage(damage,this.gameObject);
                 Destroy(gameObject);
             }
         }
