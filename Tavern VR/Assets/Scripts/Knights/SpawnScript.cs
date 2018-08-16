@@ -7,7 +7,7 @@ public class SpawnScript : MonoBehaviour {
     public GameObject[] Target;
     public int rnd;
     public int rnd2;
-    public float incroment = 5f;
+    public float incroment = 10f;
     public float timer;
     public float cont;
     
@@ -31,21 +31,29 @@ public class SpawnScript : MonoBehaviour {
 
     public void Difficulty()
     {
-        if (cont >= 180)
+        if (cont >= 600)
         {
             incroment = 0.5f;
         }
-        else if (cont >= 120)
+        if (cont >= 300)
+        {
+            incroment = 0.8f;
+        }
+        else if (cont >= 180)
         {
             incroment = 1f;
         }
-        else if (cont >= 60)
+        else if (cont >= 120)
         {
             incroment = 2f;
         }
+        else if (cont >= 60)
+        {
+            incroment = 3f;
+        }
         else if (cont >= 20)
         {
-            incroment = 2.5f;
+            incroment = 5f;
         }
     }
 
@@ -57,12 +65,12 @@ public class SpawnScript : MonoBehaviour {
             Instantiate(objectToSpawn, new Vector3(-5f, 1.7f, 0f), Quaternion.Euler(0f, 90f, 0f));
             timer = 0;
         }
-        if (rnd == 2)
+        else if (rnd == 2)
         {
             Instantiate(objectToSpawn, new Vector3(-5f, 1.7f, 5f), Quaternion.Euler(0f, 120f, 0f));
             timer = 0;
         }
-        if (rnd == 3)
+        else if (rnd == 3)
         {
             Instantiate(objectToSpawn, new Vector3(-5f, 1.7f, -5f), Quaternion.Euler(0f, 60f, 0f));
             timer = 0;
@@ -76,7 +84,7 @@ public class SpawnScript : MonoBehaviour {
             {
             SpawnPos(Target[0]);
             }
-            if (rnd2 == 1)
+            else if (rnd2 == 1)
             {
             SpawnPos(Target[1]);
             }
