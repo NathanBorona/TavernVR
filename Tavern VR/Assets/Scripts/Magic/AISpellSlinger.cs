@@ -31,6 +31,7 @@ namespace VRTK {
         //on "throwing" state, start the animation that uses the function below
 
         private void Update() {
+            spellCooldown = Mathf.Clamp(spellCooldown, 1f, 30f);
             if (Input.GetKeyDown(KeyCode.Alpha0)) {
                 AIENABLED = !AIENABLED;
             }

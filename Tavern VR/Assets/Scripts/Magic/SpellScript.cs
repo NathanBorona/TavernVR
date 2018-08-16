@@ -16,7 +16,7 @@ namespace VRTK {
         protected GameObject[] enemies;
         public GameObject caster;
         Vector3[] enemyPositions;
-        bool hasEnemies = false;
+        protected bool hasEnemies = false;
         Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
         float myDist = 0f;
         protected virtual void SetSpellState() {
