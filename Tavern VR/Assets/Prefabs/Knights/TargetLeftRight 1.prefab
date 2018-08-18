@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 136182338867265086}
   m_Layer: 0
   m_Name: GoblinTarget
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502987471559570}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.2, y: 1.7026973, z: -0.66}
+  m_LocalPosition: {x: 0.20768219, y: 1.87, z: -2.3448412}
   m_LocalScale: {x: 1, y: 1, z: 0.23263443}
   m_Children:
   - {fileID: 4660509657371130}

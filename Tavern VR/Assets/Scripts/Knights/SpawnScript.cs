@@ -10,22 +10,22 @@ public class SpawnScript : MonoBehaviour {
     public float incroment = 10f;
     public float timer;
     public float cont;
+    public bool run = true;
     
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
         cont += Time.deltaTime;
 
-        Difficulty();
-        if (timer >= incroment)
+        if (run == true)
         {
-            TargetSelect();
+            Difficulty();
+            if (timer >= incroment)
+            {
+                TargetSelect();
+            }
         }
 	}
 
