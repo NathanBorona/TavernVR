@@ -13,6 +13,7 @@ TagManager:
   - Sword
   - Tavern
   - Wall
+  - Gary
   layers:
   - Default
   - TransparentFX

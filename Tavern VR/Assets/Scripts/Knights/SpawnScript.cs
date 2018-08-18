@@ -84,7 +84,7 @@ public class SpawnScript : MonoBehaviour {
             {
             SpawnPos(Target[0]);
             }
-            else if (rnd2 == 1)
+            else if (rnd2 == 2)
             {
             SpawnPos(Target[1]);
             }
