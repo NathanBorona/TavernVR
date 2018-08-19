@@ -45,21 +45,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1545708467063164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4884633433355454}
-  m_Layer: 0
-  m_Name: transform1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1755419035878922
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +87,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4562340286531850}
+  - component: {fileID: 64882611747699888}
+  - component: {fileID: 65297200135866842}
+  - component: {fileID: 114625448344121434}
   m_Layer: 0
   m_Name: GoblinTarget
   m_TagString: Untagged
@@ -185,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855974679540088}
   m_LocalRotation: {x: -0, y: 0.7150652, z: -0, w: 0.6990578}
-  m_LocalPosition: {x: -6.704, y: 1.107, z: 1.658}
+  m_LocalPosition: {x: 0.99183816, y: 1.138, z: -2.6043391}
   m_LocalScale: {x: 9.814855, y: 9.814855, z: 9.814855}
   m_Children:
   - {fileID: 4332572551202272}
@@ -193,23 +181,9 @@ Transform:
   - {fileID: 4448546428576054}
   - {fileID: 4472822884546234}
   - {fileID: 4116759569448346}
-  - {fileID: 4884633433355454}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 91.297005, z: 0}
---- !u!4 &4884633433355454
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1545708467063164}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00025889656, y: 0.018199824, z: 0.003925278}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4562340286531850}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4903490982105636
 Transform:
   m_ObjectHideFlags: 1
@@ -437,3 +411,42 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930202273734820}
   m_Mesh: {fileID: 4300002, guid: 50e0809eb3fb02b4f85207a54f0ee512, type: 3}
+--- !u!64 &64882611747699888
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855974679540088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
+--- !u!65 &65297200135866842
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855974679540088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114625448344121434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855974679540088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bcb95eac161a546b18391ae9e8dd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetRb: {fileID: 0}

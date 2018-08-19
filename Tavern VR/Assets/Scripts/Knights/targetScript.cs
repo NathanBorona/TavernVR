@@ -8,34 +8,36 @@ public class targetScript : MonoBehaviour {
     //public GameObject myDeathEffect;
     public GameObject pole;
     public GameObject headset;
-    public Rigidbody part1;
+   /* public Rigidbody part1;
     public Rigidbody part2;
     public Collider cube;
-    public Collider caps;
+    public Collider caps; */
     public int points;
     
 
     // Player Movement Variables/....
-    public static int movespeed = 1;
+    public float movespeed = 1f;
     public Vector3 enemyDirection = Vector3.forward;
   
 
     // Use this for initialization
+    /*
     void Start () {
         part1 = GetComponent<Rigidbody>();
         part2 = GetComponent<Rigidbody>();
     }
+    */
 	
 	// Update is called once per frame
 	void Update () {
 
         Move();
-        Chop();
-        Block();
+        //Chop();
+        //Block();
         Player();
         Walls();
 	}
-
+    /*
     public void Chop ()
     {
         if (cube.gameObject.CompareTag("Sword") && caps.gameObject.CompareTag("Sword"))
@@ -46,6 +48,7 @@ public class targetScript : MonoBehaviour {
             part2.isKinematic = false;
         }
     }
+    
 
     public void Block()
     {
@@ -56,6 +59,7 @@ public class targetScript : MonoBehaviour {
             part2.isKinematic = false;
         }
     }
+    */
 
     public void Player()
     {

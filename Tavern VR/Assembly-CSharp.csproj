@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Knights\Score.cs" />
     <Compile Include="Assets\Scripts\Knights\SpawnScript.cs" />
     <Compile Include="Assets\Scripts\Knights\SwordScript.cs" />
+    <Compile Include="Assets\Scripts\Knights\TargetIgnoreScript.cs" />
     <Compile Include="Assets\Scripts\Knights\targetScript.cs" />
     <Compile Include="Assets\Scripts\Knights\WallDestroy.cs" />
     <Compile Include="Assets\Scripts\Magic\AISpellSlinger.cs" />

@@ -5,27 +5,30 @@ using UnityEngine;
 public class CollisionScript : MonoBehaviour {
 
     public GameObject target;
-    public Rigidbody targetRb;
-    public GameObject sword;
+    public Rigidbody targetBottomLeftRb;
+    public Rigidbody targetBottomRightRb;
+    public targetScript tgtScript;
 
-    public void Start()
-    {
-        Physics.IgnoreCollision(sword.GetComponent<Collider>(), GetComponent<Collider>());
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Sword")
+
+       
+        if (other.gameObject.tag == "SwordBlade")
         {
-            Destroy(target,10f);
+            
+            print("TriggerEnter");
+            tgtScript.movespeed = 0.20f;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Sword")
+        if(other.gameObject.tag == "SwordBlade")
         {
-            targetRb.isKinematic = false;
+            Destroy(target, 3f);
+            targetBottomLeftRb.isKinematic = false;
+            targetBottomRightRb.isKinematic = false;
         }
     }
 

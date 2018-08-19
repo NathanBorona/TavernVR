@@ -14,6 +14,7 @@ TagManager:
   - Tavern
   - Wall
   - Gary
+  - SwordBlade
   layers:
   - Default
   - TransparentFX
