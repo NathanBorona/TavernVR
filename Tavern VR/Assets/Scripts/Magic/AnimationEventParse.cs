@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace VRTK {
     public class AnimationEventParse : MonoBehaviour {
-        [HideInInspector]
-        public AISpellSlinger myParent;
+        AISpellSlinger myParent;
+        private void Start() {
+            myParent = GetComponent<AISpellSlinger>();
+        }
 
         public void EventParse() {
             myParent.UngrabAIAnimFunct();
