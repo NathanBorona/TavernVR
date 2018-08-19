@@ -4,35 +4,29 @@ using UnityEngine;
 
 public class CollisionScript : MonoBehaviour {
 
-
-    public Material material;
+    public GameObject target;
+    public Rigidbody targetRb;
+    public GameObject sword;
 
     public void Start()
     {
-        material.color = Color.green;
+        Physics.IgnoreCollision(sword.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
-    private void OnCollisionStart(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        foreach(ContactPoint hitpos in collision.contacts)
+        if(other.gameObject.tag == "Sword")
         {
-            if (hitpos.point.z - transform.position.z < 0)
-            {
-                Debug.Log(hitpos.point.z);
-                material.color = Color.blue;
-            }
-            else {
-                material.color = Color.green;
-                 }
+            Destroy(target,10f);
         }
-
-
-
     }
 
-
-
-
-
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Sword")
+        {
+            targetRb.isKinematic = false;
+        }
+    }
 
 }
