@@ -22,15 +22,15 @@ public class HealthScript : MonoBehaviour {
     {
         if (flags == 2)
         {
-            flag1.transform.position = new Vector3(5.92f, -3.38f, -3.2f);
+            flag1.transform.position = new Vector3(3.76f, 0.74f, -5.24f);
         }
         if (flags == 1)
         {
-            flag1.transform.position = new Vector3(2.15f, -3.38f, -3.2f);
+            flag2.transform.position = new Vector3(1.12f, 0.74f, -5.24f);
         }
         if (flags == 0)
         {
-            flag1.transform.position = new Vector3(-1.8f, -3.38f, -3.2f);
+            flag3.transform.position = new Vector3(-1.644f, 0.74f, -5.24f);
             sScript.run = false;
         }
     }
