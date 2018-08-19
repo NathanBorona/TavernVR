@@ -5,6 +5,7 @@ namespace VRTK {
     public class HealthTorches : MonoBehaviour {
         Rigidbody tempRB;
         Vector3 myOgPos;
+        Quaternion myOgRot;
         MeshRenderer myRend;
         public float myHealthPercentile;
         int myHealth;
@@ -13,6 +14,7 @@ namespace VRTK {
         HealthParse myHealthReference;
         void Start() {
             myOgPos = transform.position;
+            myOgRot = transform.rotation;
             myRend = GetComponentInChildren<MeshRenderer>();
             myHealthReference = GetComponentInParent<HealthParse>();
             myMaxHealth = myHealthReference.maxHealth;
@@ -26,7 +28,7 @@ namespace VRTK {
             if (myHealth < myHealthPercentile && !isDisabled) {
                 isDisabled = true;
                 tempRB = gameObject.GetComponent<Rigidbody>();
-                tempRB.AddForce(Vector3.up * 20f);
+                tempRB.AddForce(new Vector3(Random.Range(0f, 0.5f), Random.Range(1f, 1.5f), Random.Range(0f, 0.5f)) * tempRB.mass * 10f);
                 tempRB.useGravity = true;
                 gameObject.GetComponent<MagicBob>().enabled = false;
                 myRend.material.color = new Color(myRend.material.color.r, myRend.material.color.g, myRend.material.color.b, 0f);
@@ -35,9 +37,12 @@ namespace VRTK {
                 isDisabled = false;
                 tempRB = gameObject.GetComponent<Rigidbody>();
                 transform.position = myOgPos;
+                transform.rotation = myOgRot;
                 tempRB.useGravity = false;
                 gameObject.GetComponent<MagicBob>().enabled = true;
                 myRend.material.color = new Color(myRend.material.color.r, myRend.material.color.g, myRend.material.color.b, 0.75f);
+                tempRB.velocity = Vector3.zero;
+                tempRB.angularVelocity = Vector3.zero;
             }
         }
     }
