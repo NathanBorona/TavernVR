@@ -21,6 +21,7 @@ namespace VRTK {
         MyState myState = MyState.Cast;
 
         private void Start() {
+            myAnimator = GetComponent<Animator>();
             timer = 0f;
         }
 
@@ -52,8 +53,7 @@ namespace VRTK {
                         }
                         break;
                     case (MyState.Throw):
-                        myAnimator = myCastLoc.GetComponent<Animator>();
-                        myAnimator.SetTrigger("CastSpell");
+                        myAnimator.SetTrigger("StartThrow");
                         myState = MyState.Cast;
                         break;
                 }
@@ -62,8 +62,6 @@ namespace VRTK {
 
         void ChooseCastingHand() {
             myCastLoc = hands[Random.Range(0, hands.Length)];
-            myHandScript = myCastLoc.GetComponent<AnimationEventParse>();
-            myHandScript.myParent = this;
             myCastSpell = Instantiate(boltSpell, myCastLoc.transform.position, myCastLoc.transform.rotation);
             mySpellScript = myCastSpell.GetComponent<SpellScript>();
             mySpellScript.elementType = myElement;
@@ -74,6 +72,10 @@ namespace VRTK {
         public void UngrabAIAnimFunct() {
             isHoldingSpell = false;
             mySpellScript.OnSpellUngrab();
+        }
+
+        public void IncAnimSpeed(float speedInc) {
+            myAnimator.speed = myAnimator.speed + speedInc;
         }
     }
 }
