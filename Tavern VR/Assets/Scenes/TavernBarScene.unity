@@ -1838,6 +1838,7 @@ MonoBehaviour:
   bite2: {fileID: 1791965836}
   bite3: {fileID: 1869813686}
   blur: {fileID: 287586047}
+  Background: {fileID: 932882558}
   headset: {fileID: 568437896}
   blurOut: 0
   time: 0
@@ -4542,6 +4543,7 @@ MonoBehaviour:
   bite2: {fileID: 1448190974}
   bite3: {fileID: 692228951}
   blur: {fileID: 287586047}
+  Background: {fileID: 932882558}
   headset: {fileID: 568437896}
   blurOut: 0
   time: 0
@@ -11691,6 +11693,7 @@ MonoBehaviour:
   bite2: {fileID: 1864501706}
   bite3: {fileID: 1622779964}
   blur: {fileID: 287586047}
+  Background: {fileID: 932882558}
   headset: {fileID: 568437896}
   blurOut: 0
   time: 0
@@ -13811,6 +13814,7 @@ MonoBehaviour:
   bite2: {fileID: 1223824156}
   bite3: {fileID: 333913307}
   blur: {fileID: 287586047}
+  Background: {fileID: 932882558}
   headset: {fileID: 568437896}
   blurOut: 0
   time: 0
@@ -18807,6 +18811,7 @@ MonoBehaviour:
   bite2: {fileID: 2036255054}
   bite3: {fileID: 154204465}
   blur: {fileID: 287586047}
+  Background: {fileID: 932882558}
   headset: {fileID: 568437896}
   blurOut: 0
   time: 0
