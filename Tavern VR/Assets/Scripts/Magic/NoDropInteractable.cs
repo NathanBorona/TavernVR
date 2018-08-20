@@ -75,6 +75,9 @@ namespace VRTK {
                 myLineJudge.myController = null;
                 //not needed
                 droppable = originalDroppable;
+                for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++) {
+                    GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<AISpellSlinger>().AIENABLED = false;
+                }
                 base.Ungrabbed(previousGrabbingObject);
             }
         }

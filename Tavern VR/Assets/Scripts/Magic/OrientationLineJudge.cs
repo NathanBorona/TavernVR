@@ -6,6 +6,7 @@ using VRTK;
 
 namespace VRTK {
     public class OrientationLineJudge : MonoBehaviour {
+        public MagicHealth playerHealth;
         //Script for drawing and judging magic lines WIP.
         //I may reconsider this script and put it on the lines instead. still trying to think of way to make this work.
         int spellType;
@@ -19,7 +20,7 @@ namespace VRTK {
         Color tarCol;
         Color realCol;
         float colorLerpTime;
-
+        bool roundStart = true;
         public GameObject shieldSpell;
         public GameObject boltSpell;
 
@@ -43,6 +44,10 @@ namespace VRTK {
             myState = LineState.Start;
         }
 
+        void Start() {
+            playerHealth.curHealth = 0;
+        }
+
         void AssignVariablesMisc() {
             /*personal preference: I like to define all of my misc variables in a 
             collapsable function so they're not in the way if I'm looking for something in code.*/
@@ -60,8 +65,17 @@ namespace VRTK {
         void Update() {
             if (myController != null && myController.gripPressed) {
                 GetComponent<NoDropInteractable>().ForceStopRound();
+                roundStart = true;
+            }
+            if (playerHealth != null && playerHealth.curHealth <= 0 && !roundStart) {
+                GetComponent<NoDropInteractable>().ForceStopRound();
+                roundStart = true;
             }
             if (myController != null) {
+                if (roundStart) {
+                    playerHealth.curHealth = playerHealth.maxHealth;
+                    roundStart = false;
+                }
                 switch (myState) {
                     case LineState.Start:
                             StartLine();
