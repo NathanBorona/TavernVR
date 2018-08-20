@@ -1325,6 +1325,130 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 38ee6e9840e1388419eb9c3f4b21387a, type: 3}
   m_PrefabInternal: {fileID: 749637322}
+--- !u!1 &122066659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 122066660}
+  - component: {fileID: 122066661}
+  m_Layer: 0
+  m_Name: Bartender Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122066660
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122066659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.786, y: 0, z: -2.812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 312212906}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &122066661
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122066659}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 690f1660963914c40a1089bbc6eb2a4a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.495
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &127765883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,6 +1963,7 @@ MonoBehaviour:
   bite3: {fileID: 1869813686}
   blur: {fileID: 287586047}
   headset: {fileID: 568437896}
+  Background: {fileID: 932882558}
   blurOut: 0
   time: 0
   offChops: 0
@@ -4172,6 +4297,7 @@ Transform:
   - {fileID: 740539310}
   - {fileID: 1102669998}
   - {fileID: 932882556}
+  - {fileID: 122066660}
   - {fileID: 1148094318}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -4543,6 +4669,7 @@ MonoBehaviour:
   bite3: {fileID: 692228951}
   blur: {fileID: 287586047}
   headset: {fileID: 568437896}
+  Background: {fileID: 932882558}
   blurOut: 0
   time: 0
   offChops: 0
@@ -11692,6 +11819,7 @@ MonoBehaviour:
   bite3: {fileID: 1622779964}
   blur: {fileID: 287586047}
   headset: {fileID: 568437896}
+  Background: {fileID: 932882558}
   blurOut: 0
   time: 0
   offChops: 0
@@ -13812,6 +13940,7 @@ MonoBehaviour:
   bite3: {fileID: 333913307}
   blur: {fileID: 287586047}
   headset: {fileID: 568437896}
+  Background: {fileID: 932882558}
   blurOut: 0
   time: 0
   offChops: 0
@@ -14116,7 +14245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 312212906}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1148094319
 AudioSource:
@@ -14127,9 +14256,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 2a9c1c7b39aa9a14dbe98ddba25e2392, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.502
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14143,7 +14272,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -18748,7 +18877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headset: {fileID: 568437896}
-  barTender: {fileID: 0}
+  barTender: {fileID: 1148094319}
 --- !u!1 &1652099646
 GameObject:
   m_ObjectHideFlags: 0
@@ -18808,6 +18937,7 @@ MonoBehaviour:
   bite3: {fileID: 154204465}
   blur: {fileID: 287586047}
   headset: {fileID: 568437896}
+  Background: {fileID: 932882558}
   blurOut: 0
   time: 0
   offChops: 0
