@@ -8,45 +8,62 @@ public class CollisionScript : MonoBehaviour {
     public Rigidbody targetBottomLeftRb;                //Creating a reference to the targets Rigidbody (As i'm commenting this i realize i could've used target.gameObject.GetComponentsInChildren<Rigidbody>();)
     public Rigidbody targetBottomRightRb;               //Creating a reference to the targets Rigidbody (As i'm commenting this i realize i could've used target.gameObject.GetComponentsInChildren<Rigidbody>();)
     public targetScript tgtScript;                      //Creating a reference to the TargetScript
+    public HealthScript hpScript;
     private Vector3 startPos;
     private Vector3 endPos;
     private float yResA;
     private float yResM;
+    private float zResA;
+    private float zResM;
+    public bool upwards = false;
+    public bool sideways = false;
+
+
+    private void Start()
+    {
+        hpScript = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthScript>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "SwordBlade")       //Checking the tag on the object that it coliides with
         {
-            startPos = other.transform.position;
-            //startPos.y += yRes;
-            //print("TriggerEnter");                    //For debugging 
-            //tgtScript.movespeed = 0.20f;                //Slows the speed of the target
+            startPos = other.transform.position;        //Sets the start position when the object with tag Swordblade
+            //tgtScript.movespeed = 0.35f;
+        }
+        if (other.gameObject.tag == "Wall")
+        {
+            hpScript.flags--;
+            Destroy(target);                            //Destroys the target object if it collides with the object with the tag wall
+            
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.gameObject.tag == "SwordBlade")        //Checking the tag on the object that it coliides with
+        if (other.gameObject.tag == "SwordBlade" && (sideways == true && upwards == false))        //Checking the tag on the object that it coliides with
         {
-            endPos = other.transform.position;
-            yResA = startPos.y + yResA + 0.20f;
-            yResM = startPos.y + yResM - 0.20f;
-
-            print(startPos.y + " StartPos");
-            print(yResA + " Added");
-            print(yResM + " Taken");
-            print(endPos.y + " endpos");
-            // Destroy(target, 3f);                        //Destroys the object "Target" after 3s (For performance)
-            // targetBottomLeftRb.isKinematic = false;     //Disables kinematic so it falls apart
-            //targetBottomRightRb.isKinematic = false;
-
+            endPos = other.transform.position;                  //Sets the endPos for later to compare values
+            yResA = startPos.y + yResA + 0.10f;                 //Takes the start positions y axis and adds 0.40 to its value 
+            yResM = startPos.y + yResM - 0.10f;                 //Takes the start positions y axis and takes 0.40 to its value
+            //print(startPos.y + " StartPos");                    //Debugging
         }
-        if (other.gameObject.tag == "SwordBlade" && (endPos.z > startPos.z || endPos.z < startPos.z) && (endPos.y < yResA && endPos.y > yResM))        //Checking the tag on the object that it coliides with
+        if (other.gameObject.tag == "SwordBlade" && (sideways == true && upwards == false) && (endPos.z > startPos.z || endPos.z < startPos.z) && (endPos.y < yResA && endPos.y > yResM))        //Checking the tag on the object that it coliides with
         {
-            print(startPos.y + " StartPos");
-            print(yResA + " Added");
-            print(yResM + " Taken");
+            Destroy(target, 3f);                        //Destroys the object "Target" after 3s (For performance)
+            targetBottomLeftRb.isKinematic = false;     //Disables kinematic so it falls apart
+            targetBottomRightRb.isKinematic = false;
+        }
+  
+        if (other.gameObject.tag == "SwordBlade" && (sideways == false && upwards == true))        //Checking the tag on the object that it coliides with
+        {
+            endPos = other.transform.position;                  //Sets the endPos for later to compare values
+            zResA = startPos.z + zResA + 0.10f;                 //Takes the start positions y axis and adds 0.40 to its value 
+            zResM = startPos.z + zResM - 0.10f;                 //Takes the start positions y axis and takes 0.40 to its value
+        }
+        if (other.gameObject.tag == "SwordBlade" && (sideways == false && upwards == true) && (endPos.y > startPos.y || endPos.y < startPos.y) && (endPos.z < zResA && endPos.z > zResM))        //Checking the tag on the object that it coliides with
+        {
             Destroy(target, 3f);                        //Destroys the object "Target" after 3s (For performance)
             targetBottomLeftRb.isKinematic = false;     //Disables kinematic so it falls apart
             targetBottomRightRb.isKinematic = false;
@@ -54,9 +71,11 @@ public class CollisionScript : MonoBehaviour {
         else
         {
             startPos = new Vector3(0, 0, 0);
+            //endPos = new Vector3(0,0,0);
+            zResA = 0f;
+            zResM = 0f;
             yResA = 0f;
             yResM = 0f;
         }
     }
-
 }
