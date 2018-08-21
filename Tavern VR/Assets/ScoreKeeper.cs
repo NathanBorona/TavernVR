@@ -16,13 +16,16 @@ public class ScoreKeeper : MonoBehaviour {
             for (int i = 0; i < myScores.Length; i++) {
                 if (PlayerPrefs.GetInt("MageScore"+i) > highestScore) {
                     highestScore = PlayerPrefs.GetInt("MageScore", i);
+                    Debug.Log("changed highest score to " + ("Magescore" + i) + " which is " + highestScore);
                 }
                 if (PlayerPrefs.GetInt("MageScore"+i) == 0) {
                     myScores[i].gameObject.SetActive(false);
+                    Debug.Log("disabled " + myScores[i].name);
                 }
-                else {
+                if (PlayerPrefs.GetInt("MageScore" + i) != 0) {
                     myScores[i].gameObject.SetActive(true);
                     myScores[i].text = PlayerPrefs.GetInt("MageScore"+i).ToString();
+                    Debug.Log ("enabled " + myScores[i].name + " and set it's text to " + PlayerPrefs.GetInt("MageScore" + i).ToString());
                 }
             }
             myScores[0].text = highestScore.ToString();
