@@ -58,6 +58,7 @@ public class Banter : MonoBehaviour {
             if (playCount >= 17800)
             {
                 TalkingCrap();
+                Debug.Log("TalkingCrap");
             }
 
         }
@@ -72,42 +73,49 @@ public class Banter : MonoBehaviour {
                 ribbit0.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing0");
             }
             else if (which == 5)
             {
                 ribbit1.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing1");
             }
             else if (which == 4)
             {
                 ribbit2.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing2");
             }
             else if (which == 3)
             {
                 ribbit3.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing3");
             }
             else if (which == 2)
             {
                 ribbit4.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing4");
             }
             else if (which == 1)
             {
                 ribbit5.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing5");
             }
             else if (which == 0)
             {
                 ribbit6.Play();
                 time = 0;
                 Decider();
+                Debug.Log("Playing6");
             }
         }
     }
