@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/TestKnights.unity
+=======
+- path: Assets/Scenes/MageRoom.unity
+>>>>>>> 3874658967049a5488d6267d13c911c551ab6676
   isLoaded: 1
   isActive: 1
