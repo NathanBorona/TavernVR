@@ -2943,8 +2943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target:
-  - {fileID: 1112212907640800, guid: a349b1dc54b2c6345b0c10a8616fea33, type: 2}
-  - {fileID: 1112212907640800, guid: a349b1dc54b2c6345b0c10a8616fea33, type: 2}
+  - {fileID: 1654656664348024, guid: 54f1b63868c002547ad8ab38d68ca9f5, type: 2}
+  - {fileID: 1279029205546370, guid: 87128ed5d86559d4fb422683a066a6d7, type: 2}
   rnd: 0
   rnd2: 0
   incroment: 20
@@ -18021,6 +18021,10 @@ Prefab:
     - target: {fileID: 400000, guid: c7f8b6dec6cda7d49b036cc20338fbae, type: 3}
       propertyPath: m_LocalScale.z
       value: 6.6666684
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c7f8b6dec6cda7d49b036cc20338fbae, type: 3}
+      propertyPath: m_TagString
+      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7f8b6dec6cda7d49b036cc20338fbae, type: 3}
