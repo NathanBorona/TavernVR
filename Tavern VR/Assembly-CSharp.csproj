@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\KnightAudio.cs" />
     <Compile Include="Assets\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\Knights\CollisionScript.cs" />
     <Compile Include="Assets\Scripts\Knights\Enemy.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Scripts\Knights\Introduction.cs" />
     <Compile Include="Assets\Scripts\Knights\Player.cs" />
     <Compile Include="Assets\Scripts\Knights\Score.cs" />
+    <Compile Include="Assets\Scripts\Knights\Shield.cs" />
     <Compile Include="Assets\Scripts\Knights\SpawnScript.cs" />
     <Compile Include="Assets\Scripts\Knights\SwordScript.cs" />
     <Compile Include="Assets\Scripts\Knights\TargetIgnoreScript.cs" />
