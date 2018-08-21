@@ -10413,7 +10413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e2e7d3594931145870114428bfb036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mageGame: 0
+  mageGame: 1
   myScores:
   - {fileID: 496256416}
   - {fileID: 553344839}
