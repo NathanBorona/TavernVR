@@ -9,13 +9,15 @@ public class HealthScript : MonoBehaviour {
     public GameObject flag3;
     public int flags = 3;
     public SpawnScript sScript;
-    public GameObject target1;
-    public GameObject target2;
 
     public void Update()
     {
-        TargetHit();
-        Flag();
+        if (flags == 0)
+        {
+            print(" Lost 3 flag");
+            Destroy(GameObject.FindGameObjectWithTag("Target"));
+
+        }
     }
 
     public void Flag()
@@ -23,44 +25,39 @@ public class HealthScript : MonoBehaviour {
         if (flags == 2)
         {
             flag1.transform.position = new Vector3(3.76f, 0.74f, -5.24f);
+            print(" Lost 1 flag"); 
         }
         if (flags == 1)
         {
             flag2.transform.position = new Vector3(1.12f, 0.74f, -5.24f);
+            print(" Lost 2 flag");
         }
         if (flags == 0)
         {
             flag3.transform.position = new Vector3(-1.644f, 0.74f, -5.24f);
+            print(" Lost 3 flag");
+            Destroy(GameObject.FindGameObjectWithTag("Target"));
             sScript.run = false;
+
         }
     }
-
-    public void TargetHit()
+    
+    private void OnCollisonEnter(Collision other)
     {
-        if ((target1.transform.position - transform.position).magnitude < 2f)
-        {
-            Debug.Log("ouchies");
-            flags--;
-            Destroy(target1);
-        }
-        if ((target2.transform.position - transform.position).magnitude < 2f)
-        {
 
-            Debug.Log("ouchies2");
-            flags--;
-            Destroy(target2);
-        }
+        
     }
 
-
-
-    /*
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Target")
+        Debug.Log("Hit Something");
+        if (other.gameObject.tag == "Target")
         {
+            Destroy(other.gameObject);
             flags--;
             Debug.Log("ouch");
+            Flag();
+            
         }
-    } */
+    }
 }

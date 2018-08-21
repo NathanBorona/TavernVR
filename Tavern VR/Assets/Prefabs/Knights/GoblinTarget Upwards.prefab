@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 54548305731825362}
   m_Layer: 0
   m_Name: Bottom Left
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114021418283740914}
   m_Layer: 0
   m_Name: GoblinTarget Upwards
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 54752717526100650}
   m_Layer: 0
   m_Name: Bottom Right
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -705,6 +705,7 @@ MonoBehaviour:
   targetBottomLeftRb: {fileID: 54548305731825362}
   targetBottomRightRb: {fileID: 54752717526100650}
   tgtScript: {fileID: 114021418283740914}
+  hpScript: {fileID: 0}
   upwards: 1
   sideways: 0
 --- !u!114 &114415866189637170

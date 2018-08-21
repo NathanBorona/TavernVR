@@ -89,13 +89,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4808765654766838}
-  - component: {fileID: 64456937527967404}
   - component: {fileID: 65805428834455560}
   - component: {fileID: 114286940555547736}
   - component: {fileID: 114738170744865794}
   m_Layer: 0
   m_Name: GoblinTarget Sideways
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +131,7 @@ GameObject:
   - component: {fileID: 54892128192153916}
   m_Layer: 0
   m_Name: Bottom Right
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +151,7 @@ GameObject:
   - component: {fileID: 54526219287350068}
   m_Layer: 0
   m_Name: Bottom Left
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,20 +609,6 @@ MeshCollider:
   m_CookingOptions: -1
   m_SkinWidth: 0.04
   m_Mesh: {fileID: 4300002, guid: 50e0809eb3fb02b4f85207a54f0ee512, type: 3}
---- !u!64 &64456937527967404
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654656664348024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!64 &64897852402527866
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -700,6 +685,7 @@ MonoBehaviour:
   targetBottomLeftRb: {fileID: 54526219287350068}
   targetBottomRightRb: {fileID: 54892128192153916}
   tgtScript: {fileID: 114738170744865794}
+  hpScript: {fileID: 0}
   upwards: 0
   sideways: 1
 --- !u!114 &114650927730744624

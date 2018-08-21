@@ -31,11 +31,19 @@ public class SpawnScript : MonoBehaviour {
 
     public void Difficulty()
     {
-        if (cont >= 600)
+        if (cont >= 420)
+        {
+            incroment = 0.2f;
+        }
+        else if (cont >= 360)
+        {
+            incroment = 0.3f;
+        }
+        else if (cont >= 300)
         {
             incroment = 0.5f;
         }
-        if (cont >= 300)
+        else if (cont >= 240)
         {
             incroment = 0.8f;
         }

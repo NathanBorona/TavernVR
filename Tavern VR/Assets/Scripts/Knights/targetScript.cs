@@ -63,10 +63,10 @@ public class targetScript : MonoBehaviour {
 
     public void Player()
     {
-        if (pole.gameObject.CompareTag("Player"))
+        /*if (pole.gameObject.CompareTag("Player"))
         {
           
-        }
+        }*/
     }
 
 
