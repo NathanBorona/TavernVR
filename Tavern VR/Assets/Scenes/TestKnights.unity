@@ -8186,6 +8186,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 82753186374204908, guid: 7bd9564d98521cb44bdd76be14b805b3,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bd9564d98521cb44bdd76be14b805b3, type: 2}
   m_IsPrefabParent: 0
@@ -9263,6 +9268,23 @@ Transform:
   m_Father: {fileID: 1894146053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &619277295 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1306976876610392, guid: 3d0d03ce99953fa47a5a81d54c273c6e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1489901114}
+--- !u!114 &619277296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619277295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42377690f7e833a43a201c307a56af02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightsScene: {fileID: 1762147955}
 --- !u!1 &647454598
 GameObject:
   m_ObjectHideFlags: 0
@@ -24276,7 +24298,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 56a02bdec57fcbf48aa7fd7c20160b9d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.514
   m_Pitch: 1
   Loop: 0

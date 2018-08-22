@@ -5,7 +5,7 @@ using UnityEngine;
 public class KightsTalk : MonoBehaviour {
 
     public GameObject headset;
-    public AudioSource kights;
+    public AudioSource knights;
     public AudioSource mages;
     public AudioSource barTenderIntro;
     public AudioSource barTender;
@@ -19,9 +19,7 @@ public class KightsTalk : MonoBehaviour {
     {
         if ((!barTenderIntro.isPlaying && !barTender.isPlaying && !mages.isPlaying) && Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
         {
-            kights.Play();
-            Debug.Log("playing");
-            once++;
+            AudioTracker.PlaySpeechAudio("KnightSpeak", knights);
         }
     }
 }

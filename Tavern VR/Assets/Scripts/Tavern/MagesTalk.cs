@@ -20,9 +20,7 @@ public class MagesTalk : MonoBehaviour {
     {
         if ((!barTenderIntro.isPlaying && !barTender.isPlaying && !knights.isPlaying) && Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
         {
-            mages.Play();
-            Debug.Log("playing");
-            once++;
+            AudioTracker.PlaySpeechAudio("MageSpeak", mages);
         }
     }
 }
