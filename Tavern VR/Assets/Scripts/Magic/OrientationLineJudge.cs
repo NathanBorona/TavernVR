@@ -74,6 +74,7 @@ namespace VRTK {
             if (myController != null) {
                 if (roundStart) {
                     playerHealth.curHealth = playerHealth.maxHealth;
+                    PlayerPrefs.SetInt("Score", 0);
                     roundStart = false;
                 }
                 switch (myState) {
