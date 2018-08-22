@@ -23,9 +23,6 @@ namespace VRTK {
 
         public void Damage(int d, GameObject whatHitMe) {
             //Debug.Log("OH MY GOD SO MANY OF THESE OH NO" + whatHitMe.name);
-            if (GameObject.FindGameObjectWithTag("Player").GetComponent<MagicHealth>().curHealth == GameObject.FindGameObjectWithTag("Player").GetComponent<MagicHealth>().maxHealth)  {
-                PlayerPrefs.SetInt("Score", 0);
-            }
             curHealth = curHealth - d;
             if (scoreBonus >= 1) {
                 scoreBonus -= 1;
