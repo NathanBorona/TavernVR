@@ -98,13 +98,19 @@ public class CollisionScript : MonoBehaviour {
         Debug.Log(randomnumber);
 
         if (randomnumber == 0) {
+            sword1 = GameObject.FindGameObjectWithTag("Sword1").GetComponent<AudioSource>();
             sword1.Play();
+            Debug.Log("Sword1Play");
         }
         if (randomnumber == 1) {
+            sword2 = GameObject.FindGameObjectWithTag("Sword2").GetComponent<AudioSource>();
             sword2.Play();
+            Debug.Log("Sword2Play");
         }
         if (randomnumber == 2) {
+            sword3 = GameObject.FindGameObjectWithTag("Sword3").GetComponent<AudioSource>();
             sword3.Play();
+            Debug.Log("Sword3Play");
         }
     }
 

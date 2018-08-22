@@ -15,6 +15,10 @@ TagManager:
   - Wall
   - Gary
   - SwordBlade
+  - Score
+  - Sword1
+  - Sword2
+  - Sword3
   layers:
   - Default
   - TransparentFX

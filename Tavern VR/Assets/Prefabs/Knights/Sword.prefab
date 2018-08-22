@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 82047818146329560}
   m_Layer: 0
   m_Name: SwordSound3
-  m_TagString: Untagged
+  m_TagString: Sword3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 82645155955932456}
   m_Layer: 0
   m_Name: SwordSound1
-  m_TagString: Untagged
+  m_TagString: Sword1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 82132096880294860}
   m_Layer: 0
   m_Name: SwordSound2
-  m_TagString: Untagged
+  m_TagString: Sword2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
