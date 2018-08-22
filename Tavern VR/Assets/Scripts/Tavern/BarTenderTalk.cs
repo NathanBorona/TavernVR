@@ -14,13 +14,20 @@ public class BarTenderTalk : MonoBehaviour {
         Conversation();
     }
 
+    private void Start()
+    {
+        
+        AudioTracker.PlaySpeechAudio("DwarfIntro", barTenderIntro);
+    }
+
     public void Conversation()
     {
+
+
         if (!barTenderIntro.isPlaying && Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
         {
-            barTender.Play();
-            Debug.Log("playing");
-            once++;
+            AudioTracker.PlaySpeechAudio("DwarfSpeak", barTender);
         }
+
     }
 }

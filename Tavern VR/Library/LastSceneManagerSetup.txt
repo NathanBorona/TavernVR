@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/TavernBarScene.unity
+=======
 - path: Assets/Scenes/MageRoom.unity
+>>>>>>> 369be9ee96fb4f72c11172683e7c71dc48e97f28
   isLoaded: 1
   isActive: 1
