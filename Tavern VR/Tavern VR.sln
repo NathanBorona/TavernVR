@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tavern VR", "Assembly-CSharp.csproj", "{63803977-38BD-431F-C6BF-C0E248A27D75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tavern VR", "Assembly-CSharp-Editor.csproj", "{6E1AAF3A-2CBF-BCC7-0A76-ED26B23E43C9}"

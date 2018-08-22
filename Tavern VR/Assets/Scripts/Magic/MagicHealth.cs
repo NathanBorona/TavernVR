@@ -23,6 +23,9 @@ namespace VRTK {
 
         public void Damage(int d, GameObject whatHitMe) {
             //Debug.Log("OH MY GOD SO MANY OF THESE OH NO" + whatHitMe.name);
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<MagicHealth>().curHealth == GameObject.FindGameObjectWithTag("Player").GetComponent<MagicHealth>().maxHealth)  {
+                PlayerPrefs.SetInt("Score", 0);
+            }
             curHealth = curHealth - d;
             if (scoreBonus >= 1) {
                 scoreBonus -= 1;
@@ -39,6 +42,7 @@ namespace VRTK {
                     myAI.spellCooldown -= 0.25f;
                 }
                 if (!PlayerPrefs.HasKey("Score")) {
+                    //just in case it somehow didn't make it from Damage(int,GameObject);
                     PlayerPrefs.SetInt("Score", 0);
                     PlayerPrefs.Save();
                 }
