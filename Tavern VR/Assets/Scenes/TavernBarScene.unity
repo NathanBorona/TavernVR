@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589248, b: 0.29782632, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1222,6 +1222,53 @@ Transform:
   m_Father: {fileID: 188230488}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &100499696
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 312212906}
+    m_Modifications:
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.4823506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1106112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.1453636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 82854941575687346, guid: 4b8d392f6829c514fa56d5e0ecf5f834,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4b8d392f6829c514fa56d5e0ecf5f834, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &100559922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2510,7 @@ MonoBehaviour:
   blurOut: 0
   time: 0
   offChops: 0
+  eatingSound: {fileID: 1498657278}
 --- !u!114 &164870506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4173,7 +4221,7 @@ MeshCollider:
   m_GameObject: {fileID: 287586047}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -4344,6 +4392,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &296486569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4979,6 +5030,8 @@ Transform:
   - {fileID: 1148094318}
   - {fileID: 932882556}
   - {fileID: 1671619146}
+  - {fileID: 1498657277}
+  - {fileID: 1153326720}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5353,6 +5406,7 @@ MonoBehaviour:
   blurOut: 0
   time: 0
   offChops: 0
+  eatingSound: {fileID: 1498657278}
 --- !u!114 &335760844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6262,6 +6316,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &402546192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6971,6 +7028,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &431722153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9866,6 +9926,12 @@ Prefab:
       propertyPath: headset
       value: 
       objectReference: {fileID: 568437896}
+    - target: {fileID: 114891727831897552, guid: 925ec760020cd694c8b075f79e441796,
+        type: 2}
+      propertyPath: drinkSound
+      value: 
+      objectReference: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 925ec760020cd694c8b075f79e441796, type: 2}
   m_IsPrefabParent: 0
@@ -12944,6 +13010,7 @@ MonoBehaviour:
   blurOut: 0
   time: 0
   offChops: 0
+  eatingSound: {fileID: 1498657278}
 --- !u!114 &986431403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14459,6 +14526,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &1092554286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14635,7 +14705,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 97f414f0ac5519241ab3f32194fa3c65, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.514
+  m_Volume: 0.606
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15327,6 +15397,7 @@ MonoBehaviour:
   blurOut: 0
   time: 0
   offChops: 0
+  eatingSound: {fileID: 1498657278}
 --- !u!114 &1127690849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15795,6 +15866,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6c2a86df324fbb4889b9b56237b3924, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1153326720 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2030866307}
 --- !u!1 &1153458721
 GameObject:
   m_ObjectHideFlags: 0
@@ -19127,6 +19203,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &1492182301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19293,6 +19372,16 @@ Transform:
   m_Father: {fileID: 201623519}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1498657277 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4826660403250074, guid: 4b8d392f6829c514fa56d5e0ecf5f834,
+    type: 2}
+  m_PrefabInternal: {fileID: 100499696}
+--- !u!82 &1498657278 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82854941575687346, guid: 4b8d392f6829c514fa56d5e0ecf5f834,
+    type: 2}
+  m_PrefabInternal: {fileID: 100499696}
 --- !u!1 &1500444494
 GameObject:
   m_ObjectHideFlags: 0
@@ -19773,7 +19862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headset: {fileID: 568437896}
-  knights: {fileID: 0}
+  knights: {fileID: 740539311}
   mages: {fileID: 1102669999}
   barTenderIntro: {fileID: 122066661}
   barTender: {fileID: 1148094319}
@@ -20648,6 +20737,7 @@ MonoBehaviour:
   blurOut: 0
   time: 0
   offChops: 0
+  eatingSound: {fileID: 1498657278}
 --- !u!114 &1652099649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21418,6 +21508,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &1689023760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23435,6 +23528,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &1875553411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25053,6 +25149,53 @@ Transform:
   m_Father: {fileID: 2115747172}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2030866307
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 312212906}
+    m_Modifications:
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.4823506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1106112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.1453636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059016813289904, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3f978e48ac7af6b498e7b7eba873432b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2035722517
 GameObject:
   m_ObjectHideFlags: 0
@@ -26372,6 +26515,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &2114140824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26922,6 +27068,9 @@ MonoBehaviour:
   headset: {fileID: 568437896}
   countDown: 6
   time: 0
+  Drinkingbool: 0
+  drinkSound: {fileID: 82830090132596952, guid: 3f978e48ac7af6b498e7b7eba873432b,
+    type: 2}
 --- !u!114 &2136974464
 MonoBehaviour:
   m_ObjectHideFlags: 0

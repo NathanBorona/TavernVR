@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
 
+    public AudioSource shieldSound;
+
     // Use this for initialization
     void Start()
     {
@@ -24,6 +26,13 @@ public class Shield : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("Hit Something");
+            ShieldPlay();
         }
+    }
+
+    void ShieldPlay()
+    {
+        shieldSound.Play();
+        Debug.Log("ShieldSound");
     }
 }

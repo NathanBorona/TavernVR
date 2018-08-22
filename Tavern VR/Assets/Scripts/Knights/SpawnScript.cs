@@ -11,11 +11,14 @@ public class SpawnScript : MonoBehaviour {
     public float timer;
     public float cont;
     public bool run = true;
-    
+    public AudioSource Goblin1;
+    public AudioSource Goblin2;
+    public AudioSource Goblin3;
+    public AudioSource Goblin4;
+    public AudioSource Goblin5;
 
-
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         timer += Time.deltaTime;
         cont += Time.deltaTime;
 
@@ -25,6 +28,7 @@ public class SpawnScript : MonoBehaviour {
             if (timer >= incroment)
             {
                 TargetSelect();
+                GoblinSounds();
             }
         }
 	}
@@ -97,4 +101,42 @@ public class SpawnScript : MonoBehaviour {
             SpawnPos(Target[1]);
             }
         }
+
+    void GoblinSounds()
+    {
+        int randomnumber = 0;
+        randomnumber = Random.Range(0, 5);
+        Debug.Log(randomnumber);
+
+        if (randomnumber == 0)
+        {
+            Goblin1 = GameObject.FindGameObjectWithTag("Goblin1").GetComponent<AudioSource>();
+            Goblin1.Play();
+            Debug.Log("Goblin1Play");
+        }
+        if (randomnumber == 1)
+        {
+            Goblin2 = GameObject.FindGameObjectWithTag("Goblin2").GetComponent<AudioSource>();
+            Goblin2.Play();
+            Debug.Log("Goblin2Play");
+        }
+        if (randomnumber == 2)
+        {
+            Goblin3 = GameObject.FindGameObjectWithTag("Goblin3").GetComponent<AudioSource>();
+            Goblin3.Play();
+            Debug.Log("Goblin3Play");
+        }
+        if (randomnumber == 3)
+        {
+            Goblin4 = GameObject.FindGameObjectWithTag("Goblin4").GetComponent<AudioSource>();
+            Goblin4.Play();
+            Debug.Log("Goblin4Play");
+        }
+        if (randomnumber == 4)
+        {
+            Goblin5 = GameObject.FindGameObjectWithTag("Goblin5").GetComponent<AudioSource>();
+            Goblin5.Play();
+            Debug.Log("Goblin5Play");
+        }
+    }
 }

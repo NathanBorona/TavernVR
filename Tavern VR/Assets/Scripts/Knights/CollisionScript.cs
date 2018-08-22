@@ -30,6 +30,7 @@ public class CollisionScript : MonoBehaviour {
     public AudioSource sword2;
     public AudioSource sword3;
 
+
     private void Start()
     {
         hpScript = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthScript>();
@@ -113,5 +114,7 @@ public class CollisionScript : MonoBehaviour {
             Debug.Log("Sword3Play");
         }
     }
+
+ 
 
  }
