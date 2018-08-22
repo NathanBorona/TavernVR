@@ -9600,6 +9600,56 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82538641272664868, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82658417932405016, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82684275270265970, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82458092818349668, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82338405904074178, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82510716356717296, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82994616484949020, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82609306228638838, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82124236548965306, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 82868348927297764, guid: d59f86b46740c554d9487d0a2a75a761,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.041
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d59f86b46740c554d9487d0a2a75a761, type: 2}
   m_IsPrefabParent: 0
