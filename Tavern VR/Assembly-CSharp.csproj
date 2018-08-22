@@ -62,6 +62,7 @@
     <Compile Include="Assets\KnightAudio.cs" />
     <Compile Include="Assets\KnightSceneAudio.cs" />
     <Compile Include="Assets\MageInstructions.cs" />
+    <Compile Include="Assets\OnDestroyExplosion.cs" />
     <Compile Include="Assets\PlayZone.cs" />
     <Compile Include="Assets\ResetAudio.cs" />
     <Compile Include="Assets\ScoreKeeper.cs" />
