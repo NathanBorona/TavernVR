@@ -612,6 +612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDeathClip: {fileID: 8300000, guid: 78c6aba0e68c6d44cbef8d0cbc5ba1c8, type: 3}
+  isExplosion: 0
+  myTimer: 5
 --- !u!114 &114656639143426074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1238,7 +1240,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 51
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5778,7 +5780,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 51
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10318,7 +10320,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 51
     size3D: 0
     rotation3D: 0
     gravityModifier:

@@ -24,10 +24,6 @@ namespace VRTK {
             }
         }
 
-
-        //THIS DOWNWARD IS REQUIRED FOR NON DROPPABLE:
-        //(with a few exceptions)
-
         private void Start() {
             originalDroppable = droppable;
             droppableAlt = droppable;
@@ -41,9 +37,7 @@ namespace VRTK {
             droppable = true;
             droppableAlt = droppable;
             Ungrabbed();
-            //not needed
             myLineJudge.myController = null;
-            //not needed
         }
 
         protected override void PrimaryControllerUngrab(GameObject previousGrabbingObject, GameObject previousSecondaryGrabbingObject) {
@@ -71,9 +65,7 @@ namespace VRTK {
         }
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null) {
             if (droppable) {
-                //not needed
                 myLineJudge.myController = null;
-                //not needed
                 droppable = originalDroppable;
                 for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++) {
                     GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<AISpellSlinger>().AIENABLED = false;
