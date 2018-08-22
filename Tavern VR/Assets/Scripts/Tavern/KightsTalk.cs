@@ -6,6 +6,9 @@ public class KightsTalk : MonoBehaviour {
 
     public GameObject headset;
     public AudioSource kights;
+    public AudioSource mages;
+    public AudioSource barTenderIntro;
+    public AudioSource barTender;
     int once = 1;
 
 	void Update () {
@@ -14,7 +17,7 @@ public class KightsTalk : MonoBehaviour {
 
     public void Conversation ()
     {
-        if (Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
+        if ((!barTenderIntro.isPlaying && !barTender.isPlaying && !mages.isPlaying) && Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
         {
             kights.Play();
             Debug.Log("playing");

@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Exit
+  - KnightDoor
+  - MageDoor
+  - Enemy
+  - Target
+  - Shield
+  - Sword
+  - Tavern
+  - Wall
+  - Gary
+  - SwordBlade
   layers:
   - Default
   - TransparentFX
@@ -13,9 +24,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - SpellFocus
+  - Health
+  - Spell
   - 
   - 
   - 

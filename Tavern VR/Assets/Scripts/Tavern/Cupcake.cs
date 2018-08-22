@@ -13,10 +13,11 @@
         public GameObject bite2;
         public GameObject bite3;
         public GameObject blur;
-
         public GameObject headset;
+        public AudioSource Background;
         public float blurOut;
         public float time;
+        float playSpeed = 0.75f;
         public bool offChops;
 
         // Use this for initialization
@@ -73,8 +74,12 @@
         public void High ()
         {
             blurOut = blurOut + Time.deltaTime;
+            Time.timeScale = 0.75f;
+            Background.pitch = playSpeed;
             if (blurOut >= 10)
             {
+                Time.timeScale = 1f;
+                Background.pitch = 1f;
                 blur.SetActive(false);
                 offChops = false;
             }

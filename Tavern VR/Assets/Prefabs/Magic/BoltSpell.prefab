@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4869674340746014}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4874322113368880}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Thorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4372457911206436}
   - component: {fileID: 114011786320564634}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Type
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 198050338777683072}
   - component: {fileID: 199259222891046662}
   - component: {fileID: 122986298143228484}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: ThornsObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 54135382502824658}
   - component: {fileID: 114423327680388134}
   - component: {fileID: 114656639143426074}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: BoltSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 198958112769807896}
   - component: {fileID: 199566651697757738}
   - component: {fileID: 122136142292052962}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: WaterObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 198875230334134388}
   - component: {fileID: 199906160646036414}
   - component: {fileID: 122669586450265054}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FireObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4976471533121272}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ MonoBehaviour:
   myController: {fileID: 0}
   targetEnemy: {fileID: 0}
   caster: {fileID: 0}
-  damage: 10
+  damage: 1
   speedMult: 5
 --- !u!122 &122136142292052962
 Halo:
@@ -564,7 +564,7 @@ SphereCollider:
   m_GameObject: {fileID: 1524017966636596}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -588,7 +588,7 @@ SphereCollider:
   m_GameObject: {fileID: 1301848891705608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -600,7 +600,7 @@ SphereCollider:
   m_GameObject: {fileID: 1564543112104024}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

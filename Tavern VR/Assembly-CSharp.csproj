@@ -59,16 +59,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HUDScript.cs" />
+    <Compile Include="Assets\KnightAudio.cs" />
+    <Compile Include="Assets\ScoreKeeper.cs" />
+    <Compile Include="Assets\Scripts\Knights\CollisionScript.cs" />
     <Compile Include="Assets\Scripts\Knights\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Knights\HealthScript.cs" />
     <Compile Include="Assets\Scripts\Knights\HUDScript.cs" />
+    <Compile Include="Assets\Scripts\Knights\Introduction.cs" />
     <Compile Include="Assets\Scripts\Knights\Player.cs" />
+    <Compile Include="Assets\Scripts\Knights\Score.cs" />
+    <Compile Include="Assets\Scripts\Knights\Shield.cs" />
     <Compile Include="Assets\Scripts\Knights\SpawnScript.cs" />
     <Compile Include="Assets\Scripts\Knights\SwordScript.cs" />
+    <Compile Include="Assets\Scripts\Knights\TargetIgnoreScript.cs" />
     <Compile Include="Assets\Scripts\Knights\targetScript.cs" />
+    <Compile Include="Assets\Scripts\Knights\WallDestroy.cs" />
     <Compile Include="Assets\Scripts\Magic\AISpellSlinger.cs" />
     <Compile Include="Assets\Scripts\Magic\AnimationEventParse.cs" />
-    <Compile Include="Assets\Scripts\Magic\LOG.cs" />
+    <Compile Include="Assets\Scripts\Magic\HealthParse.cs" />
+    <Compile Include="Assets\Scripts\Magic\HealthTorches.cs" />
     <Compile Include="Assets\Scripts\Magic\MagicHealth.cs" />
     <Compile Include="Assets\Scripts\Magic\NoDropInteractable.cs" />
     <Compile Include="Assets\Scripts\Magic\OrientationLineJudge.cs" />
@@ -77,15 +86,16 @@
     <Compile Include="Assets\Scripts\Magic\SpellInteractable.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellShield.cs" />
+    <Compile Include="Assets\Scripts\Tavern\Banter.cs" />
     <Compile Include="Assets\Scripts\Tavern\BarTenderTalk.cs" />
     <Compile Include="Assets\Scripts\Tavern\Cupcake.cs" />
     <Compile Include="Assets\Scripts\Tavern\DrinkScript.cs" />
     <Compile Include="Assets\Scripts\Tavern\KightsTalk.cs" />
     <Compile Include="Assets\Scripts\Tavern\MagesTalk.cs" />
     <Compile Include="Assets\Scripts\Tavern\MagicBob.cs" />
-    <Compile Include="Assets\Scripts\Tavern\OpenDoorScript.cs" />
     <Compile Include="Assets\Scripts\Tavern\OpenDoorScript1.cs" />
     <Compile Include="Assets\Scripts\Tavern\Portal.cs" />
+    <Compile Include="Assets\Scripts\Tavern\Ribbit.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -443,22 +453,22 @@
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
     <None Include="Assets\SteamVR\readme.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
-    <None Include="Assets\Assets\Models\Materials\TextWallBlock.shader" />
+    <None Include="Assets\Assets\Models\Textures\Materials\TextWallBlock.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/PC/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/PC/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/PC/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ajuran/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/PC/Documents/GitHub/TavernVR/Tavern VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -634,9 +644,6 @@
     <Reference Include="Unity.Locator">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
-    <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -659,10 +666,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/ajuran/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/ajuran/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

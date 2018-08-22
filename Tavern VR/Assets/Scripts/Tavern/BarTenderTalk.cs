@@ -6,6 +6,7 @@ public class BarTenderTalk : MonoBehaviour {
 
     public GameObject headset;
     public AudioSource barTender;
+    public AudioSource barTenderIntro;
     int once = 1;
 
     void Update()
@@ -15,7 +16,7 @@ public class BarTenderTalk : MonoBehaviour {
 
     public void Conversation()
     {
-        if (Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
+        if (!barTenderIntro.isPlaying && Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
         {
             barTender.Play();
             Debug.Log("playing");

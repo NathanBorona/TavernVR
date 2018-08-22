@@ -5,7 +5,10 @@ using UnityEngine;
 public class MagesTalk : MonoBehaviour {
 
     public GameObject headset;
-    public AudioSource mage;
+    public AudioSource knights;
+    public AudioSource mages;
+    public AudioSource barTenderIntro;
+    public AudioSource barTender;
     int once = 1;
 
     void Update()
@@ -15,9 +18,9 @@ public class MagesTalk : MonoBehaviour {
 
     public void Conversation()
     {
-        if (Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
+        if ((!barTenderIntro.isPlaying && !barTender.isPlaying && !knights.isPlaying) && Vector3.Distance(headset.transform.position, transform.position) < 2f && once == 1)
         {
-            mage.Play();
+            mages.Play();
             Debug.Log("playing");
             once++;
         }

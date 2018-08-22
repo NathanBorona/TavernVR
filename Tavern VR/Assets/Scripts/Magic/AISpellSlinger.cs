@@ -21,6 +21,7 @@ namespace VRTK {
         MyState myState = MyState.Cast;
 
         private void Start() {
+            myAnimator = GetComponent<Animator>();
             timer = 0f;
         }
 
@@ -31,37 +32,36 @@ namespace VRTK {
         //on "throwing" state, start the animation that uses the function below
 
         private void Update() {
+            spellCooldown = Mathf.Clamp(spellCooldown, 1f, 30f);
             if (Input.GetKeyDown(KeyCode.Alpha0)) {
                 AIENABLED = !AIENABLED;
             }
-            if (isHoldingSpell) {
-                myCastSpell.transform.position = myCastLoc.transform.position;
-            }
-            switch (myState) {
-                case (MyState.Cast):
-                    if (AIENABLED == true)
+            if (AIENABLED == true) {
+                if (isHoldingSpell) {
+                    myCastSpell.transform.position = myCastLoc.transform.position;
+                }
+                switch (myState) {
+                    case (MyState.Cast):
                         timer += Time.deltaTime;
-                    if (timer >= 0.5 * spellCooldown && !isHoldingSpell) {
-                        myElement = Random.Range(0, 3);
-                        ChooseCastingHand();
-                    }
-                    if (timer >= spellCooldown) {
-                        timer = 0f;
-                        myState = MyState.Throw;
-                    }
-                    break;
-                case (MyState.Throw):
-                    myAnimator = myCastLoc.GetComponent<Animator>();
-                    myAnimator.SetTrigger("CastSpell");
-                    myState = MyState.Cast;
-                    break;
+                        if (timer >= 0.5 * spellCooldown && !isHoldingSpell) {
+                            myElement = Random.Range(0, 3);
+                            ChooseCastingHand();
+                        }
+                        if (timer >= spellCooldown) {
+                            timer = 0f;
+                            myState = MyState.Throw;
+                        }
+                        break;
+                    case (MyState.Throw):
+                        myAnimator.SetTrigger("StartThrow");
+                        myState = MyState.Cast;
+                        break;
+                }
             }
         }
 
         void ChooseCastingHand() {
             myCastLoc = hands[Random.Range(0, hands.Length)];
-            myHandScript = myCastLoc.GetComponent<AnimationEventParse>();
-            myHandScript.myParent = this;
             myCastSpell = Instantiate(boltSpell, myCastLoc.transform.position, myCastLoc.transform.rotation);
             mySpellScript = myCastSpell.GetComponent<SpellScript>();
             mySpellScript.elementType = myElement;
@@ -72,6 +72,10 @@ namespace VRTK {
         public void UngrabAIAnimFunct() {
             isHoldingSpell = false;
             mySpellScript.OnSpellUngrab();
+        }
+
+        public void IncAnimSpeed(float speedInc) {
+            myAnimator.speed = myAnimator.speed + speedInc;
         }
     }
 }

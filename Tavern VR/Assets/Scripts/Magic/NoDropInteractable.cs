@@ -11,14 +11,17 @@ namespace VRTK {
             base.FixedUpdate();
         }*/
 
-       //bool hasBeenGrabbed;
-       public override void OnInteractableObjectGrabbed(InteractableObjectEventArgs e) {
+        //bool hasBeenGrabbed;
+        public override void OnInteractableObjectGrabbed(InteractableObjectEventArgs e) {
             base.OnInteractableObjectGrabbed(e);
             //hasBeenGrabbed = true;
             //controllerGrabbing = grabbingObjects[0].GetComponent<VRTK_InteractGrab>();
             grabbingObj = grabbingObjects[0];
             myLineJudge = GetComponent<OrientationLineJudge>();
             myLineJudge.myController = grabbingObj.GetComponent<VRTK_ControllerEvents>();
+            for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++) {
+                GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<AISpellSlinger>().AIENABLED = true;
+            }
         }
 
 
@@ -72,6 +75,9 @@ namespace VRTK {
                 myLineJudge.myController = null;
                 //not needed
                 droppable = originalDroppable;
+                for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++) {
+                    GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<AISpellSlinger>().AIENABLED = false;
+                }
                 base.Ungrabbed(previousGrabbingObject);
             }
         }

@@ -27,6 +27,10 @@ namespace VRTK {
             {
                 Tavern();
             }
+            if (tag == ("Gary"))
+            {
+                Gary();
+            }
 
         }
 
@@ -47,6 +51,13 @@ namespace VRTK {
         void Tavern()
         {
             SceneManager.LoadScene("TavernBarScene");
+        }
+        void Gary()
+        {
+            Debug.Log("Restart");
+            int current = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(current, LoadSceneMode.Single);
+
         }
 
     }
