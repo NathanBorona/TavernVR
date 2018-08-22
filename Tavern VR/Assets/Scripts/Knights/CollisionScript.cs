@@ -25,7 +25,11 @@ public class CollisionScript : MonoBehaviour {
 
     public bool upwards = false;
     public bool sideways = false;
-    
+
+    public AudioSource sword1;
+    public AudioSource sword2;
+    public AudioSource sword3;
+
     private void Start()
     {
         hpScript = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthScript>();
@@ -39,6 +43,7 @@ public class CollisionScript : MonoBehaviour {
         {
             startPos = other.transform.position;          //Sets the start position when the object with tag Swordblade
             tgtScript.movespeed = 0.25f;                  //Slows the target to reduce the targets going thought the player
+            SwordRandomFX();
         }
     }
 
@@ -86,4 +91,21 @@ public class CollisionScript : MonoBehaviour {
     {
         scoreScript.score += 10;
     }*/
-}
+
+    void SwordRandomFX() {
+        int randomnumber = 0;
+        randomnumber = Random.Range(0, 3);
+        Debug.Log(randomnumber);
+
+        if (randomnumber == 0) {
+            sword1.Play();
+        }
+        if (randomnumber == 1) {
+            sword2.Play();
+        }
+        if (randomnumber == 2) {
+            sword3.Play();
+        }
+    }
+
+ }

@@ -684,10 +684,16 @@ MonoBehaviour:
   target: {fileID: 1654656664348024}
   targetBottomLeftRb: {fileID: 54526219287350068}
   targetBottomRightRb: {fileID: 54892128192153916}
+  targetTopRightRb: {fileID: 0}
+  targetTopLeftRb: {fileID: 0}
   tgtScript: {fileID: 114738170744865794}
   hpScript: {fileID: 0}
+  scoreScript: {fileID: 0}
   upwards: 0
   sideways: 1
+  sword1: {fileID: 82645155955932456, guid: b93602ab8b4a85b4e9108095e15d9600, type: 2}
+  sword2: {fileID: 82132096880294860, guid: b93602ab8b4a85b4e9108095e15d9600, type: 2}
+  sword3: {fileID: 82047818146329560, guid: b93602ab8b4a85b4e9108095e15d9600, type: 2}
 --- !u!114 &114650927730744624
 MonoBehaviour:
   m_ObjectHideFlags: 1
