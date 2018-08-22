@@ -70,17 +70,17 @@ public class SpawnScript : MonoBehaviour {
         rnd = Random.Range(1, 4);
         if (rnd == 1)
         {
-            Instantiate(objectToSpawn, new Vector3(-5f, 1.2f, 0f), Quaternion.Euler(0f, 90f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.3f, 0f), Quaternion.Euler(0f, 90f, 0f));
             timer = 0;
         }
         else if (rnd == 2)
         {
-            Instantiate(objectToSpawn, new Vector3(-5f, 1.2f, 5f), Quaternion.Euler(0f, 120f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.3f, 5f), Quaternion.Euler(0f, 120f, 0f));
             timer = 0;
         }
         else if (rnd == 3)
         {
-            Instantiate(objectToSpawn, new Vector3(-5f, 1.2f, -5f), Quaternion.Euler(0f, 60f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.3f, -5f), Quaternion.Euler(0f, 60f, 0f));
             timer = 0;
         }
     }
