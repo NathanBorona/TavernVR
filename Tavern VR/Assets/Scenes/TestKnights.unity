@@ -27070,6 +27070,30 @@ Prefab:
       propertyPath: m_Name
       value: Shield_HightlightOnTouch
       objectReference: {fileID: 0}
+    - target: {fileID: 4087730799184330, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087730799184330, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087730799184330, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087730799184330, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087730799184330, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087730799184330, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9981577e9b5caf46ae42375592cb284, type: 2}
   m_IsPrefabParent: 0
@@ -27747,7 +27771,7 @@ Prefab:
     - target: {fileID: 82868348927297764, guid: d59f86b46740c554d9487d0a2a75a761,
         type: 2}
       propertyPath: m_Volume
-      value: 0.072
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 82510716356717296, guid: d59f86b46740c554d9487d0a2a75a761,
         type: 2}
