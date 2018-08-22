@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace VRTK {
-    public class SpellScript : MonoBehaviour {
+namespace VRTK
+{
+    public class SpellScript : MonoBehaviour
+    {
+        float lifeTime = 5f;
+        float myTime = 0f;
         bool isPlayer;
         protected Rigidbody spellRB;
         public int elementType;
@@ -19,29 +23,35 @@ namespace VRTK {
         protected bool hasEnemies = false;
         Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
         float myDist = 0f;
-        protected virtual void SetSpellState() {
+        protected virtual void SetSpellState()
+        {
             curSpell = MySpellState.Default;
             //overriden by their spells to set the state for debugging.
         }
 
-        protected virtual void Start() {
+        protected virtual void Start()
+        {
             SetSpellState();
         }
 
-        protected virtual void FindEnemies() {
+        protected virtual void FindEnemies()
+        {
             //either gets a list of all tagged enemies or a list of all enemies minus the caster (for AI casting)
-            if (isPlayer) {
+            if (isPlayer)
+            {
                 //the caster is the player
                 enemies = GameObject.FindGameObjectsWithTag("Enemy");
                 //simply find all enemy "Enemy"s
             }
 
-            else {
+            else
+            {
                 GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
                 //else targets are all "Enemy"
                 List<GameObject> allTargets = new List<GameObject>();
                 //make a new list called allTargets
-                for (int i = 0; i < targets.Length; i++) {
+                for (int i = 0; i < targets.Length; i++)
+                {
                     allTargets.Add(targets[i]);
                     //for the list of allTargets, add all enemies
                 }
@@ -51,22 +61,28 @@ namespace VRTK {
                 //then remove the caster from the list
                 enemies = new GameObject[allTargets.Count];
                 //set the enemy length to be the same as the length of the list
-                for (int t = 0; t < enemies.Length; t++) {
+                for (int t = 0; t < enemies.Length; t++)
+                {
                     enemies[t] = allTargets[t];
                     //set the enemy array to be the same as the enemy list
                 }
             }
         }
-        //ERROR: sometimes this targets itself in AI.
 
-
-        protected virtual void FixedUpdate() {
-            switch (curCast) {
+        protected virtual void FixedUpdate()
+        {
+            switch (curCast)
+            {
                 case MyCastState.Idle:
-                    //idlestuff
+                    myTime += Time.deltaTime;
+                    if (myTime >= lifeTime)
+                    {
+                        Destroy(this.gameObject);
+                    }
                     break;
                 case MyCastState.Held:
-                    if (!hasEnemies) {
+                    if (!hasEnemies)
+                    {
                         hasEnemies = true;
                         FindEnemies();
                         enemyPositions = new Vector3[enemies.Length];
@@ -79,28 +95,34 @@ namespace VRTK {
             }
         }
 
-        protected virtual void TargetFind() {
-            if (enemies != null) {
+        protected virtual void TargetFind()
+        {
+            if (enemies != null)
+            {
                 targetEnemy = enemies[Random.Range(0, enemies.Length)];
             }
         }
 
-        protected virtual void SpellCast() {
+        protected virtual void SpellCast()
+        {
             Debug.LogError(curSpell + " has cast but is not overriding. Despite setting state, other Scripts seem to be missing or are throwing errors.");
         }
 
-        public virtual void OnSpellUngrab() {
+        public virtual void OnSpellUngrab()
+        {
             hasEnemies = false;
         }
 
-        public virtual void OnSpellGrab() {
+        public virtual void OnSpellGrab()
+        {
             //find out if holder is GameObject.FindGameObjectWithTag("Player") somehow
             caster = GameObject.FindGameObjectWithTag("Player");
             isPlayer = true;
             hasEnemies = false;
             curCast = MyCastState.Held;
         }
-        public virtual void OnSpellGrabNPC(GameObject nPC) {
+        public virtual void OnSpellGrabNPC(GameObject nPC)
+        {
             caster = nPC;
             isPlayer = false;
             hasEnemies = false;

@@ -60,9 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\KnightAudio.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\KnightSceneAudio.cs" />
     <Compile Include="Assets\MageInstructions.cs" />
     <Compile Include="Assets\ResetAudio.cs" />
+=======
+    <Compile Include="Assets\PlayZone.cs" />
+>>>>>>> 369be9ee96fb4f72c11172683e7c71dc48e97f28
     <Compile Include="Assets\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\Knights\CollisionScript.cs" />
     <Compile Include="Assets\Scripts\Knights\Enemy.cs" />
@@ -87,6 +91,7 @@
     <Compile Include="Assets\Scripts\Magic\RenderElementSpell.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellBall.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellInteractable.cs" />
+    <Compile Include="Assets\Scripts\Magic\SpellLife.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Magic\SpellShield.cs" />
     <Compile Include="Assets\Scripts\Tavern\AudioTracker.cs" />
