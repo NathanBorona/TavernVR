@@ -33,8 +33,9 @@ public class ScoreKeeper : MonoBehaviour {
             //myScores[0].text = highestScore.ToString();
         }
 
-        /*if (!mageGame) {
-            int highestScore = 0;
+        if (!mageGame) {
+            myScore.text = PlayerPrefs.GetInt("KnightScore").ToString();
+            /*int highestScore = 0;
             for (int i = 0; i < myScores.Length; i++) {
                 if (PlayerPrefs.GetInt("KnightScore"+i) > highestScore) {
                     highestScore = PlayerPrefs.GetInt("KnightScore", i);
@@ -46,8 +47,8 @@ public class ScoreKeeper : MonoBehaviour {
                     myScores[i].gameObject.SetActive(true);
                     myScores[i].text = PlayerPrefs.GetInt("KnightScore"+i).ToString();
                 }
-            }
-            myScores[0].text = highestScore.ToString();
-        }*/
+            }*/
+            //myScore.text = highestScore.ToString();
+        }
     }
 }

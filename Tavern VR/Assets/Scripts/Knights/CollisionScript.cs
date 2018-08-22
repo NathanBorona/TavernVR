@@ -13,6 +13,7 @@ public class CollisionScript : MonoBehaviour {
 
     public targetScript tgtScript;                      //Creating a reference to the TargetScript
     public HealthScript hpScript;
+    public Score scoreScript;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -28,6 +29,7 @@ public class CollisionScript : MonoBehaviour {
     private void Start()
     {
         hpScript = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthScript>();
+        scoreScript = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
     }
 
 
@@ -51,7 +53,8 @@ public class CollisionScript : MonoBehaviour {
         }
         if (other.gameObject.tag == "SwordBlade" && (sideways == true && upwards == false) && (endPos.z > startPos.z || endPos.z < startPos.z) && (endPos.y < yResA && endPos.y > yResM))        //Checking the tag on the object that it coliides with
         {
-            Destroy(target, 0.15f);                               //Destroys the object "Target" after 3s (For performance)
+            Destroy(target, 0.15f);                               //Destroys the object "Target" after .15s (For performance)
+            scoreScript.score += 10;
             targetBottomLeftRb.isKinematic = false;               //Disables kinematic so it falls apart
             targetBottomRightRb.isKinematic = false;
         }
@@ -64,7 +67,8 @@ public class CollisionScript : MonoBehaviour {
         }
         if (other.gameObject.tag == "SwordBlade" && (sideways == false && upwards == true) && (endPos.y > startPos.y || endPos.y < startPos.y) && (endPos.z < zResA && endPos.z > zResM))        //Checking the tag on the object that it coliides with
         {
-            Destroy(target, 0.15f);                            //Destroys the object "Target" after 3s (For performance)
+            Destroy(target, 0.15f);                            //Destroys the object "Target" after .15s (For performance)
+            scoreScript.score += 10;
             targetTopRightRb.isKinematic = false;              //Disables kinematic so it falls apart 
             targetBottomRightRb.isKinematic = false;
         }
@@ -78,4 +82,8 @@ public class CollisionScript : MonoBehaviour {
             yResM = 0f;
         }
     }
+    /*private void OnDestroy()
+    {
+        scoreScript.score += 10;
+    }*/
 }
