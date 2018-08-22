@@ -16,9 +16,6 @@ namespace VRTK {
             base.OnInteractableObjectGrabbed(e);
             //hasBeenGrabbed = true;
             //controllerGrabbing = grabbingObjects[0].GetComponent<VRTK_InteractGrab>();
-            if (GameObject.FindGameObjectWithTag("Player").GetComponent<MagicHealth>().curHealth == GameObject.FindGameObjectWithTag("Player").GetComponent<MagicHealth>().maxHealth) {
-                PlayerPrefs.SetInt("Score", 0);
-            }
             grabbingObj = grabbingObjects[0];
             myLineJudge = GetComponent<OrientationLineJudge>();
             myLineJudge.myController = grabbingObj.GetComponent<VRTK_ControllerEvents>();

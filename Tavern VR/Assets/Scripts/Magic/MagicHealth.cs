@@ -39,7 +39,6 @@ namespace VRTK {
                     myAI.spellCooldown -= 0.25f;
                 }
                 if (!PlayerPrefs.HasKey("Score")) {
-                    //just in case it somehow didn't make it from Damage(int,GameObject);
                     PlayerPrefs.SetInt("Score", 0);
                     PlayerPrefs.Save();
                 }
