@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 864d13f60dd255c4d93a11428152d7af
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BottomSpine
+    100002: //RootNode
+    100004: group
+    100006: ikHandle1
+    100008: ikHandle2
+    100010: L_ArmIK
+    100012: L_Clavicle
+    100014: L_Elbow
+    100016: L_Fingers
+    100018: L_Foot
+    100020: L_Hand
+    100022: L_Hip
+    100024: L_Knee
+    100026: L_Shoulder
+    100028: L_Toes
+    100030: MiddleSpine
+    100032: Neck
+    100034: nurbsCircle1
+    100036: nurbsCircle2
+    100038: pasted__pCylinder7
+    100040: pCylinder11
+    100042: pCylinder12
+    100044: Pelvis_Spine
+    100046: polySurface2
+    100048: polySurface4
+    100050: R_ArmIK
+    100052: R_Clavicle
+    100054: R_Elbow
+    100056: R_Fingers
+    100058: R_Foot
+    100060: R_Hand
+    100062: R_Hip
+    100064: R_Knee
+    100066: R_Shoulder
+    100068: R_Toes
+    100070: Top_Head
+    100072: Top_Spine
+    100074: transform1
+    100076: UpperSpine
+    400000: BottomSpine
+    400002: //RootNode
+    400004: group
+    400006: ikHandle1
+    400008: ikHandle2
+    400010: L_ArmIK
+    400012: L_Clavicle
+    400014: L_Elbow
+    400016: L_Fingers
+    400018: L_Foot
+    400020: L_Hand
+    400022: L_Hip
+    400024: L_Knee
+    400026: L_Shoulder
+    400028: L_Toes
+    400030: MiddleSpine
+    400032: Neck
+    400034: nurbsCircle1
+    400036: nurbsCircle2
+    400038: pasted__pCylinder7
+    400040: pCylinder11
+    400042: pCylinder12
+    400044: Pelvis_Spine
+    400046: polySurface2
+    400048: polySurface4
+    400050: R_ArmIK
+    400052: R_Clavicle
+    400054: R_Elbow
+    400056: R_Fingers
+    400058: R_Foot
+    400060: R_Hand
+    400062: R_Hip
+    400064: R_Knee
+    400066: R_Shoulder
+    400068: R_Toes
+    400070: Top_Head
+    400072: Top_Spine
+    400074: transform1
+    400076: UpperSpine
+    2100000: skin
+    2300000: polySurface2
+    2300002: polySurface4
+    3300000: polySurface2
+    3300002: polySurface4
+    4300000: polySurface2
+    4300002: polySurface4
+    4300004: pCylinder12
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCylinder12
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin
+    second: {fileID: 2100000, guid: d3fd71cb1a32b8c49b3fd642f491e3e8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 113
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 12
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

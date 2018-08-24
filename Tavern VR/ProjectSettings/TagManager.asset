@@ -15,6 +15,17 @@ TagManager:
   - Wall
   - Gary
   - SwordBlade
+  - Score
+  - Sword1
+  - Sword2
+  - Sword3
+  - Goblin1
+  - Goblin2
+  - Goblin3
+  - Goblin4
+  - Goblin5
+  - Drink
+  - Eat
   layers:
   - Default
   - TransparentFX

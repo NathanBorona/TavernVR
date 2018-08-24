@@ -36,6 +36,8 @@ namespace VRTK {
 
         void Quit()
         {
+
+
             Application.Quit();
         }
 

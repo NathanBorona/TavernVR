@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour {
-    public bool mageGame = false;
-    public TextMesh[] myScores;
+    public bool mageGame = true;
+    //public TextMesh[] myScores;
+    public TextMesh myScore;
 	void Start () {
 
     }
@@ -12,7 +13,8 @@ public class ScoreKeeper : MonoBehaviour {
 	void Update () {
         //gets the highest score via a for function that also sets the other scores chronologically
         if (mageGame) {
-            int highestScore = 0;
+            myScore.text = PlayerPrefs.GetInt("Score").ToString();
+            /*int highestScore = 0;
             for (int i = 0; i < myScores.Length; i++) {
                 if (PlayerPrefs.GetInt("MageScore"+i) > highestScore) {
                     highestScore = PlayerPrefs.GetInt("MageScore", i);
@@ -27,12 +29,13 @@ public class ScoreKeeper : MonoBehaviour {
                     myScores[i].text = PlayerPrefs.GetInt("MageScore"+i).ToString();
                     Debug.Log ("enabled " + myScores[i].name + " and set it's text to " + PlayerPrefs.GetInt("MageScore" + i).ToString());
                 }
-            }
-            myScores[0].text = highestScore.ToString();
+            }*/
+            //myScores[0].text = highestScore.ToString();
         }
 
         if (!mageGame) {
-            int highestScore = 0;
+            myScore.text = PlayerPrefs.GetInt("KnightScore").ToString();
+            /*int highestScore = 0;
             for (int i = 0; i < myScores.Length; i++) {
                 if (PlayerPrefs.GetInt("KnightScore"+i) > highestScore) {
                     highestScore = PlayerPrefs.GetInt("KnightScore", i);
@@ -44,8 +47,8 @@ public class ScoreKeeper : MonoBehaviour {
                     myScores[i].gameObject.SetActive(true);
                     myScores[i].text = PlayerPrefs.GetInt("KnightScore"+i).ToString();
                 }
-            }
-            myScores[0].text = highestScore.ToString();
+            }*/
+            //myScore.text = highestScore.ToString();
         }
     }
 }

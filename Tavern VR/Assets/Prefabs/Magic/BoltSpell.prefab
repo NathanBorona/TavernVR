@@ -25,7 +25,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1200953744285128
 GameObject:
   m_ObjectHideFlags: 1
@@ -67,7 +67,6 @@ GameObject:
   - component: {fileID: 4431564811405068}
   - component: {fileID: 33970318847978352}
   - component: {fileID: 23079689005965188}
-  - component: {fileID: 135745642394879698}
   - component: {fileID: 198050338777683072}
   - component: {fileID: 199259222891046662}
   - component: {fileID: 122986298143228484}
@@ -93,6 +92,8 @@ GameObject:
   - component: {fileID: 54135382502824658}
   - component: {fileID: 114423327680388134}
   - component: {fileID: 114656639143426074}
+  - component: {fileID: 82401637826380642}
+  - component: {fileID: 114570465035062644}
   m_Layer: 10
   m_Name: BoltSpell
   m_TagString: Untagged
@@ -110,7 +111,6 @@ GameObject:
   - component: {fileID: 4352604414985248}
   - component: {fileID: 33019963222209732}
   - component: {fileID: 23018852066266576}
-  - component: {fileID: 135240381215111936}
   - component: {fileID: 198958112769807896}
   - component: {fileID: 199566651697757738}
   - component: {fileID: 122136142292052962}
@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 4271521320779712}
   - component: {fileID: 33411199888241116}
   - component: {fileID: 23734528356783784}
-  - component: {fileID: 135761239294710682}
   - component: {fileID: 198875230334134388}
   - component: {fileID: 199906160646036414}
   - component: {fileID: 122669586450265054}
@@ -206,7 +205,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426205548919604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.94, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4372457911206436}
@@ -409,6 +408,101 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82401637826380642
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426205548919604}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6924eaac58c65b94285878ccc129de58, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114011786320564634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -506,6 +600,20 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 1
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+--- !u!114 &114570465035062644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426205548919604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f77971a10120544ca725d8ec022f1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDeathClip: {fileID: 8300000, guid: 78c6aba0e68c6d44cbef8d0cbc5ba1c8, type: 3}
+  isExplosion: 0
+  myTimer: 5
 --- !u!114 &114656639143426074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,18 +664,6 @@ Halo:
     serializedVersion: 2
     rgba: 4278226944
   m_Size: 0.2
---- !u!135 &135240381215111936
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524017966636596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135701656906048432
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -577,30 +673,6 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135745642394879698
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1301848891705608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135761239294710682
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1564543112104024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1168,7 +1240,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 51
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5708,7 +5780,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 51
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10248,7 +10320,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 51
     size3D: 0
     rotation3D: 0
     gravityModifier:
