@@ -11,11 +11,14 @@ public class SpawnScript : MonoBehaviour {
     public float timer;
     public float cont;
     public bool run = true;
-    
+    public AudioSource Goblin1;
+    public AudioSource Goblin2;
+    public AudioSource Goblin3;
+    public AudioSource Goblin4;
+    public AudioSource Goblin5;
 
-
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         timer += Time.deltaTime;
         cont += Time.deltaTime;
 
@@ -25,33 +28,34 @@ public class SpawnScript : MonoBehaviour {
             if (timer >= incroment)
             {
                 TargetSelect();
+                GoblinSounds();
             }
         }
 	}
 
     public void Difficulty()
     {
-        if (cont >= 420)
+        if (cont >= 270)
         {
             incroment = 0.2f;
         }
-        else if (cont >= 360)
+        else if (cont >= 240)
         {
             incroment = 0.3f;
         }
-        else if (cont >= 300)
+        else if (cont >= 210)
         {
             incroment = 0.5f;
         }
-        else if (cont >= 240)
+        else if (cont >= 180)
         {
             incroment = 0.8f;
         }
-        else if (cont >= 180)
+        else if (cont >= 120)
         {
             incroment = 1f;
         }
-        else if (cont >= 120)
+        else if (cont >= 90)
         {
             incroment = 2f;
         }
@@ -70,17 +74,17 @@ public class SpawnScript : MonoBehaviour {
         rnd = Random.Range(1, 4);
         if (rnd == 1)
         {
-            Instantiate(objectToSpawn, new Vector3(-5f, 1.2f, 0f), Quaternion.Euler(0f, 90f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.3f, 0f), Quaternion.Euler(0f, 90f, 0f));
             timer = 0;
         }
         else if (rnd == 2)
         {
-            Instantiate(objectToSpawn, new Vector3(-5f, 1.2f, 5f), Quaternion.Euler(0f, 120f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.3f, 5f), Quaternion.Euler(0f, 120f, 0f));
             timer = 0;
         }
         else if (rnd == 3)
         {
-            Instantiate(objectToSpawn, new Vector3(-5f, 1.2f, -5f), Quaternion.Euler(0f, 60f, 0f));
+            Instantiate(objectToSpawn, new Vector3(-5f, 1.3f, -5f), Quaternion.Euler(0f, 60f, 0f));
             timer = 0;
         }
     }
@@ -97,4 +101,42 @@ public class SpawnScript : MonoBehaviour {
             SpawnPos(Target[1]);
             }
         }
+
+    void GoblinSounds()
+    {
+        int randomnumber = 0;
+        randomnumber = Random.Range(0, 5);
+        Debug.Log(randomnumber);
+
+        if (randomnumber == 0)
+        {
+            Goblin1 = GameObject.FindGameObjectWithTag("Goblin1").GetComponent<AudioSource>();
+            Goblin1.Play();
+            Debug.Log("Goblin1Play");
+        }
+        if (randomnumber == 1)
+        {
+            Goblin2 = GameObject.FindGameObjectWithTag("Goblin2").GetComponent<AudioSource>();
+            Goblin2.Play();
+            Debug.Log("Goblin2Play");
+        }
+        if (randomnumber == 2)
+        {
+            Goblin3 = GameObject.FindGameObjectWithTag("Goblin3").GetComponent<AudioSource>();
+            Goblin3.Play();
+            Debug.Log("Goblin3Play");
+        }
+        if (randomnumber == 3)
+        {
+            Goblin4 = GameObject.FindGameObjectWithTag("Goblin4").GetComponent<AudioSource>();
+            Goblin4.Play();
+            Debug.Log("Goblin4Play");
+        }
+        if (randomnumber == 4)
+        {
+            Goblin5 = GameObject.FindGameObjectWithTag("Goblin5").GetComponent<AudioSource>();
+            Goblin5.Play();
+            Debug.Log("Goblin5Play");
+        }
+    }
 }

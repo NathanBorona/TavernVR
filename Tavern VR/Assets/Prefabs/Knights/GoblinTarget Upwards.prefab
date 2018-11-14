@@ -783,8 +783,12 @@ MonoBehaviour:
   targetTopLeftRb: {fileID: 54925188948363524}
   tgtScript: {fileID: 114021418283740914}
   hpScript: {fileID: 0}
+  scoreScript: {fileID: 0}
   upwards: 1
   sideways: 0
+  sword1: {fileID: 82645155955932456, guid: b93602ab8b4a85b4e9108095e15d9600, type: 2}
+  sword2: {fileID: 82132096880294860, guid: b93602ab8b4a85b4e9108095e15d9600, type: 2}
+  sword3: {fileID: 82047818146329560, guid: b93602ab8b4a85b4e9108095e15d9600, type: 2}
 --- !u!114 &114415866189637170
 MonoBehaviour:
   m_ObjectHideFlags: 1

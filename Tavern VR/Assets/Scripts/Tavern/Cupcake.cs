@@ -20,6 +20,8 @@
         float playSpeed = 0.75f;
         public bool offChops;
 
+        public AudioSource eatingSound;
+
         // Use this for initialization
         void Start()
         {
@@ -48,25 +50,30 @@
                     bite3.SetActive(false);
                     blur.SetActive(true);
                     offChops = true;
+                    EatingSound();
                 }
                 else if (time >= 3)
                 {
                     bite2.SetActive(false);
                     bite3.SetActive(true);
+                    EatingSound();
                 }
                 else if (time >= 2)
                 {
                     bite1.SetActive(false);
                     bite2.SetActive(true);
+                    EatingSound();
                 }
                 else if (time >= 1)
                 {
                     full.SetActive(false);
                     bite1.SetActive(true);
+                    EatingSound();
                 }
                 else if (time >= 0)
                 {
                     full.SetActive(true);
+                    EatingSound();
                 }
             }
         }
@@ -85,5 +92,12 @@
             }
         }
 
+        void EatingSound()
+        {
+            eatingSound.Play();
+            Debug.Log("EatingSound");
+        }
+
     }
+
 }
